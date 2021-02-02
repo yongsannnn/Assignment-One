@@ -69,9 +69,7 @@ API/JSON File Exploration and Investigations:
     Hourly Occupancy Data: https://gym-tracker.data.gov.sg/api/gymcapall/
 
 
-
-Additional Consideration:
-Add in nearby bus stop to Objective 1.3 (APIs from data mall) 
+![image](complexity-matrix.png)
 
 
 
