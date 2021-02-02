@@ -32,7 +32,7 @@ singaporeMarker.addEventListener("click", function () {
     alert("Hi")
 })
 
-// Bukit Timah
+// Bukit Timah Circle 
 var butkitCircle = L.circle([1.35, 103.77], {
     color: 'red',
     fillColor: '#f03',

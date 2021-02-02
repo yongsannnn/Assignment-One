@@ -47,15 +47,15 @@
 
 # Skeleton:       
     From left to right:
-        Image 1: Main homepage will have Map and zones being shown. Filter option to allow user to hide/display zone.
-        Image 2: When user selects or get directed to the pin, information of the location will be shown. This will include in a live occupancy data of that gym.
-        Image 3: User clicks on "Compare" button to switch over to interactive chart. By default, first outlet's heatmap will be displayed under "Heatmap 1", user can choose another outlet with the dropdown menu.
-                 Time filtering is optional, if nothing is chosen. Will display full set of data. 
-        Image 4: Second Heatmap will be a compilation of different outlets for better overview and comparison. Checklist of outlets will be provided. Use can filter by day or time.
+        Image 1: Main homepage will have map and zones being shown once DOM is loaded. Filter option to allow user to hide/display zone.
+        Image 2: When user select or gets directed to a pin, information of the gym will be shown. This will include in a live occupancy rate.
+        Image 3: User clicks on "Compare" button it will switch over to interactive chart. By default, first outlet's heatmap will be displayed under "Heatmap 1", user can choose another outlet with the dropdown menu.
+                 Time filtering is optional, if no specific time is chosen. Heatmap will display full set of data. 
+        Image 4: Second Heatmap will be a compilation of different outlets for better overview and comparison. Checklist of outlets will be provided. User can filter by day or time.
                  Conditions: At any one point, only ONE day of data can be shown alongside. (Toggle between the date checkboxes)
                              If no outlet is selected, heatmap will show "No data"
 
-![image](skeleton-img-1.png) ![image](skeleton-img-2.png) ![image](skeleton-img-3.png) ![image](skeleton-img-4.png) 
+![image](images/skeleton-img-1.png) ![image](images/skeleton-img-2.png) ![image](images/skeleton-img-3.png) ![image](images/skeleton-img-4.png) 
         
 
 # Technique/Step-by-step: 
@@ -80,7 +80,7 @@
     Hourly Occupancy Data: https://gym-tracker.data.gov.sg/api/gymcapall/
 
 # Complexity-Matrix
-![image](complexity-matrix.png)
+![image](images/complexity-matrix.png)
 
 
 
