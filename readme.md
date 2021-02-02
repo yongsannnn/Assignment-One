@@ -1,7 +1,6 @@
-# Assignment-One
-Gym locator & Occupancy Chart Application
+# Assignment-One Gym locator & Occupancy Chart Application
 
-Strategy:
+# Strategy:
 
     The user: Fitness/Gym enthusiast of all ages
     
@@ -16,7 +15,7 @@ Strategy:
                     2) As a user I want to know how filled the gym is now, so that I can plan my visit.
                     3) As a user I want to compare occupancy between different gyms, so that I can choose which outlet to visit. 
 
-Scope:
+# Scope:
 
     Functional Requirement:
         1) User can search where is the nearest outlet based on region.
@@ -30,7 +29,7 @@ Scope:
         2) Application should be mobile first design. 
         3) Application should not store any of the user's location information(if enabled)
 
-Structure: 
+# Structure: 
 
     Homepage: 
         1) Map
@@ -45,9 +44,21 @@ Structure:
                     1.2.1) Filter by Outlet
                     1.2.2) Filter by Time
                     1.2.3) Comparing one or multiple outlets
-                 
+
+# Skeleton:       
+    From left to right:
+        Image 1: Main homepage will have Map and zones being shown. Filter option to allow user to hide/display zone.
+        Image 2: When user selects or get directed to the pin, information of the location will be shown. This will include in a live occupancy data of that gym.
+        Image 3: User clicks on "Compare" button to switch over to interactive chart. By default, first outlet's heatmap will be displayed under "Heatmap 1", user can choose another outlet with the dropdown menu.
+                 Time filtering is optional, if nothing is chosen. Will display full set of data. 
+        Image 4: Second Heatmap will be a compilation of different outlets for better overview and comparison. Checklist of outlets will be provided. Use can filter by day or time.
+                 Conditions: At any one point, only ONE day of data can be shown alongside. (Toggle between the date checkboxes)
+                             If no outlet is selected, heatmap will show "No data"
+
+![image](skeleton-img-1.png) ![image](skeleton-img-2.png) ![image](skeleton-img-3.png) ![image](skeleton-img-4.png) 
         
-Technique/Step-by-step: 
+
+# Technique/Step-by-step: 
 
     To meet user needs 1&2) 
         1)	Map will have 4 layers showing outlets from the north, central, west and east. Zoom to show its exact location. Use can interact and show a specific zone only.
@@ -62,15 +73,14 @@ Technique/Step-by-step:
         3)	Add/remove different outlets to compare occupancy through the selected parameter. (This must happen in the same chart) 
 
 
-API/JSON File Exploration and Investigations:
+# API/JSON File Exploration and Investigations:
 
     Location of all gyms in Singapore: https://data.gov.sg/dataset/gymssg
     Weekly Occupancy Data: https://gym-tracker.data.gov.sg/data/gym-formatted-data.json
     Hourly Occupancy Data: https://gym-tracker.data.gov.sg/api/gymcapall/
 
-
+# Complexity-Matrix
 ![image](complexity-matrix.png)
-
 
 
 
