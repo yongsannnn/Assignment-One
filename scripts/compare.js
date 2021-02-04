@@ -5,6 +5,8 @@ window.addEventListener("DOMContentLoaded", async function () {
     // console.log(data);
     // console.log("object keys",Object.keys(data));
     // Object.keys(data).map(location => console.log(data[location]))
+
+    //Setting up function to slice from weekly json file
     function getLocationTimings(location) {
         let weekly = data[location].weekly_data;
         weekly = weekly.map(innerArray =>
@@ -62,6 +64,7 @@ window.addEventListener("DOMContentLoaded", async function () {
         yaxis: {
             reversed: true,
         },
+        //Color of plots
         plotOptions: {
             heatmap: {
                 colorScale: {

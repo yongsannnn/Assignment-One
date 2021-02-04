@@ -25,7 +25,7 @@ window.addEventListener("DOMContentLoaded", async function () {
             console.log(feature)
             let divElement = document.createElement("div");
             divElement.innerHTML = feature.properties.Description;
-            let gymName = divElement.querySelectorAll("atd"a)[13].innerHTML;
+            let gymName = divElement.querySelectorAll("td")[13].innerHTML;
 
             layer.bindPopup(`Name: ${gymName}`);
         }
