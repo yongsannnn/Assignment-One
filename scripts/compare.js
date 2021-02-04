@@ -3,15 +3,16 @@ window.addEventListener("DOMContentLoaded", async function () {
     let response = await axios.get("https://gym-tracker.data.gov.sg/data/gym-formatted-data.json");
     let data = response.data;
     // console.log(data);
-    let bedokWeekly = data.bedok.weekly_data;
-    console.log(bedokWeekly);
-    let slicedBedok;
-    for (i of bedokWeekly){
-        console.log(i)
-        slicedBedok=[i.slice(7,23)]
+    // console.log("object keys",Object.keys(data));
+    // Object.keys(data).map(location => console.log(data[location]))
+    function getLocationTimings(location){
+        let weekly = data[location].weekly_data;
+        weekly = weekly.map(innerArray =>
+            innerArray.slice(7,23)
+        )
+        console.log(weekly)
     }
-    
-    console.log(slicedBedok);
+    getLocationTimings("yishun")
     // Chart One - Individual Outlet Chart
     // Defining the chart options. 
     const heatOneOptions = {
