@@ -18,12 +18,16 @@ window.addEventListener("DOMContentLoaded", async function () {
     let response = await axios.get("gyms-location.geojson")
     let data = response.data;
     let activeGym = data.features.filter(des => des.properties.Description.includes("ClubFITT"));
-    console.log(activeGym)
+    // console.log(activeGym)
 
-    let layer = L.geoJson(data, {
+    let layer = L.geoJson(activeGym, {
         onEachFeature: function (feature, layer) {
+            console.log(feature)
             let divElement = document.createElement("div");
             divElement.innerHTML = feature.properties.Description;
+            let gymName = divElement.querySelectorAll('td')[13].innerHTML;
+            
+            layer.bindPopup(`Name: ${gymName}`);
         }
     })
     layer.addTo(map);
