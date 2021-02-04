@@ -18,7 +18,7 @@ const options = {
     dataLabels: {
         enabled: false
     },
-    // Timeslots
+    // Timeslots from 7am to 9pm. 
     xaxis: {
         categories: ["7A", "8A", "9A", "10A", "11A", "12P", "1P", "2P", "3P", "4P", "5P", "6P", "7P", "8P", "9P"]
     },
