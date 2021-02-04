@@ -31,31 +31,34 @@
         <!-- Dropdown menu and first heatmap -->
         <div class="row">
             <!-- Selecting of gym dropdown -->
-            <form class="select-gym">
-                <!-- Outlet selection -->
-                <div>
-                    <label class="form-label">Select An ActiveSG Gym</label>
-                    <select class="form-control" name="single-gyms" id="single-gyms">
-                        <option value="bedok">Bedok</option>
-                        <option value="yishun">Yishun</option>
-                        <option value="woodlands">Woodlands</option>
-                    </select>
-                </div>
-                <!-- Timing Selection -->
-                <div>
-                    <label class="form-label">Select Time</label>
-                    <select class="form-control" name="single-time" id="single-time">
-                        <option value="all">Show All</option>
-                        <option value="seven-to-eleven">7AM - 11AM</option>
-                        <option value="eleven-to-three">11AM - 3PM</option>
-                        <option value="three-to-seven">3PM - 7PM</option>
-                        <option value="seven-to-ten">7PM - 10PM</option>
-                    </select>
-                </div>
+            <div class="col">
+                <form class="select-gym">
+                    <!-- Outlet selection -->
+                    <div class="col-12">
+                        <label class="form-label">Select An ActiveSG Gym</label>
+                        <select class="form-control" name="single-gyms" id="single-gyms">
+                            <option value="bedok">Bedok</option>
+                            <option value="yishun">Yishun</option>
+                            <option value="woodlands">Woodlands</option>
+                        </select>
+                    </div>
+                    <!-- Timing Selection -->
+                    <div class="col-12">
+                        <label class="form-label">Select Time</label>
+                        <select class="form-control" name="single-time" id="single-time">
+                            <option value="all">Show All</option>
+                            <option value="seven-to-eleven">7AM - 11AM</option>
+                            <option value="eleven-to-three">11AM - 3PM</option>
+                            <option value="three-to-seven">3PM - 7PM</option>
+                            <option value="seven-to-ten">7PM - 10PM</option>
+                        </select>
+                    </div>
 
-            </form>
-            <div>
-                
+                </form>
+                <div class="col-12 mt-3" style="height:50vh">
+                    <div id="chart">
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -79,7 +82,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
-    <script src="script.js"></script>
+    <script src="../scripts/compare.js"></script>
 </body>
 
 </html>
