@@ -171,12 +171,13 @@ window.addEventListener("DOMContentLoaded", async function () {
 
     // render the chart
     heatTwo.render()
-    
+
     let btn = document.querySelector("#single-gyms");
     btn.addEventListener("change", function () {
         // alert(`You have selected ${btn.value}`)
         let newWeekly = getWeeklyTimings(btn.value)
-        console.log(newWeekly)
+        let newId = btn.querySelector(":checked").getAttribute("data-id")
+        console.log(newId)
         heatOne.updateSeries([{
                             name: "M",
                     data: newWeekly[0]
