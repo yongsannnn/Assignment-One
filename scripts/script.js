@@ -17,34 +17,14 @@ window.addEventListener("DOMContentLoaded", async function () {
 
     let response = await axios.get("gyms-location.geojson")
     let data = response.data;
-    let layer = L.geoJson(data,{
-        onEachFeature: function(feature, layer){
-            console.log(feature);
+    let activeGym = data.features.filter(des => des.properties.Description.includes("ClubFITT"));
+    console.log(activeGym)
+
+    let layer = L.geoJson(data, {
+        onEachFeature: function (feature, layer) {
             let divElement = document.createElement("div");
             divElement.innerHTML = feature.properties.Description;
         }
     })
     layer.addTo(map);
-})
-
-// let singaporeMarker = L.marker([1.29, 103.85],);
-// singaporeMarker.addTo(map);
-// singaporeMarker.bindPopup(
-//     `<h1>Singapore</h1>`
-// );
-
-// singaporeMarker.addEventListener("click", function () {
-//     alert("Hi")
-// })
-
-// // Bukit Timah Circle 
-// var butkitCircle = L.circle([1.35, 103.77], {
-//     color: 'red',
-//     fillColor: '#f03',
-//     fillOpacity: 0.5,
-//     radius: 500
-// }).addTo(map)
-
-// butkitCircle.addEventListener("click", function () {
-//     alert("Are you here to hike?")
-// })
+});
