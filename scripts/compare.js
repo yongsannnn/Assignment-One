@@ -7,14 +7,14 @@ window.addEventListener("DOMContentLoaded", async function () {
     // Object.keys(data).map(location => console.log(data[location]))
 
     //Setting up function to slice from weekly json file
-    function getLocationTimings(location) {
+    function getWeeklyTimings(location) {
         let weekly = data[location].weekly_data;
         weekly = weekly.map(innerArray =>
-            innerArray.slice(7, 21)
+            innerArray.slice(7, 22)
         )
-        console.log(weekly)
+        return (weekly)
     }
-    getLocationTimings("yishun")
+
     // Chart One - Individual Outlet Chart
     // Defining the chart options. 
     const heatOneOptions = {
@@ -26,31 +26,31 @@ window.addEventListener("DOMContentLoaded", async function () {
         series: [
             {
                 name: "M",
-                data: [10, 11, 20, 21, 30, 31, 34, 23, 55, 78, 44, 65, 23, 77, 70]
+                data: getWeeklyTimings("bedok")[0]
             },
             {
                 name: "T",
-                data: [10, 10, 30, 42, 75, 50, 21, 55, 8, 54, 29, 37, 78, 65, 15]
+                data: getWeeklyTimings("bedok")[1]
             },
             {
                 name: "W",
-                data: [10, 10, 10, 13, 15, 22, 34, 23, 55, 78, 44, 65, 23, 77, 70]
+                data: getWeeklyTimings("bedok")[2]
             },
             {
                 name: "T",
-                data: [10, 10, 30, 42, 75, 50, 21, 55, 8, 54, 29, 37, 78, 65, 15]
+                data: getWeeklyTimings("bedok")[3]
             },
             {
                 name: "F",
-                data: [10, 10, 10, 13, 15, 22, 34, 23, 55, 78, 44, 65, 23, 77, 70]
+                data: getWeeklyTimings("bedok")[4]
             },
             {
                 name: "S",
-                data: [10, 10, 30, 42, 75, 50, 21, 55, 8, 54, 29, 37, 78, 65, 15]
+                data: getWeeklyTimings("bedok")[5]
             },
             {
                 name: "S",
-                data: [10, 10, 10, 13, 15, 22, 34, 23, 55, 78, 44, 65, 23, 77, 70]
+                data: getWeeklyTimings("bedok")[6]
             },
 
         ],
@@ -74,47 +74,47 @@ window.addEventListener("DOMContentLoaded", async function () {
                         color: "#FFEDA0",
                     },
                     {
-                        from: 11,
+                        from: 10.01,
                         to: 20,
                         color: "#F7BE81",
                     },
                     {
-                        from: 21,
+                        from: 20.01,
                         to: 30,
                         color: "#E96747",
                     },
                     {
-                        from: 31,
+                        from: 30.01,
                         to: 40,
                         color: "#E13625",
-                    }, 
+                    },
                     {
-                        from: 41,
+                        from: 40.01,
                         to: 50,
                         color: "#DC1812",
                     },
                     {
-                        from: 51,
+                        from: 50.01,
                         to: 60,
                         color: "#B90303",
                     },
                     {
-                        from: 61,
+                        from: 60.01,
                         to: 70,
                         color: "#990303",
-                    }, 
+                    },
                     {
-                        from: 71,
+                        from: 70.01,
                         to: 80,
                         color: "#6F0202",
                     },
                     {
-                        from: 81,
+                        from: 80.01,
                         to: 90,
                         color: "#530202",
                     },
                     {
-                        from: 91,
+                        from: 90.01,
                         to: 100,
                         color: "#2E0101",
                     }
@@ -171,5 +171,40 @@ window.addEventListener("DOMContentLoaded", async function () {
 
     // render the chart
     heatTwo.render()
+    
+    let btn = document.querySelector("#single-gyms");
+    btn.addEventListener("change", function () {
+        // alert(`You have selected ${btn.value}`)
+        let newWeekly = getWeeklyTimings(btn.value)
+        console.log(newWeekly)
+        heatOne.updateSeries([{
+                            name: "M",
+                    data: newWeekly[0]
+                },
+                {
+                    name: "T",
+                    data: newWeekly[1]
+                },
+                {
+                    name: "W",
+                    data: newWeekly[2]
+                },
+                {
+                    name: "T",
+                    data: newWeekly[3]
+                },
+                {
+                    name: "F",
+                    data: newWeekly[4]
+                },
+                {
+                    name: "S",
+                    data: newWeekly[5]
+                },
+                {
+                    name: "S",
+                    data: newWeekly[6]
+                
+        }])
+    })
 })
-
