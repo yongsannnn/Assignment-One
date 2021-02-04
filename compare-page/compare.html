@@ -25,7 +25,8 @@
         <div class="row mt-3">
             <div class="col-md-8 col-xs-12">
                 <h1>ActiveSG Gym Tracker</h1>
-                <p>Wondering if an ActiveSG gyms is filled? Using the data provided you can see the average occupancy of each gym over one-hour periods.</p>
+                <p>Wondering if an ActiveSG gyms is filled? Using the data provided you can see the average occupancy of
+                    each gym over one-hour periods.</p>
             </div>
         </div>
         <!-- First Heatmap (Individual Occupancy for the week)-->
@@ -33,29 +34,35 @@
         <div class="row">
             <!-- Selecting of gym dropdown -->
             <div class="col">
-                <form class="select-gym">
-                    <!-- Outlet selection -->
-                    <div class="col-12">
-                        <label class="form-label">Select An ActiveSG Gym</label>
-                        <select class="form-control" name="single-gyms" id="single-gyms">
-                            <option value="bedok">Bedok</option>
-                            <option value="yishun">Yishun</option>
-                            <option value="woodlands">Woodlands</option>
-                        </select>
+                <div class="row">
+                    <form class="select-gym col-8">
+                        <!-- Outlet selection -->
+                        <div class="col-12">
+                            <label class="form-label">Select An ActiveSG Gym</label>
+                            <select class="form-control" name="single-gyms" id="single-gyms">
+                                <option value="bedok">Bedok</option>
+                                <option value="yishun">Yishun</option>
+                                <option value="woodlands">Woodlands</option>
+                            </select>
+                        </div>
+                        <!-- Timing Selection -->
+                        <div class="col-12">
+                            <label class="form-label">Select Time</label>
+                            <select class="form-control" name="single-time" id="single-time">
+                                <option value="all">Show All</option>
+                                <option value="seven-to-eleven">7AM - 11AM</option>
+                                <option value="eleven-to-three">11AM - 3PM</option>
+                                <option value="three-to-seven">3PM - 7PM</option>
+                                <option value="seven-to-ten">7PM - 10PM</option>
+                            </select>
+                        </div>
+                    </form>
+                    <div class="col-4 live-text">
+                        <h2>Location</h2>
+                        <h1>--%</h1>
+                        <p>Occupied</p>
                     </div>
-                    <!-- Timing Selection -->
-                    <div class="col-12">
-                        <label class="form-label">Select Time</label>
-                        <select class="form-control" name="single-time" id="single-time">
-                            <option value="all">Show All</option>
-                            <option value="seven-to-eleven">7AM - 11AM</option>
-                            <option value="eleven-to-three">11AM - 3PM</option>
-                            <option value="three-to-seven">3PM - 7PM</option>
-                            <option value="seven-to-ten">7PM - 10PM</option>
-                        </select>
-                    </div>
-
-                </form>
+                </div>
                 <!-- Heatmap One -->
                 <div class="col-12 mt-3" style="height:50vh">
                     <div id="heat-one">

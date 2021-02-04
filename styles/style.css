@@ -11,6 +11,10 @@
     outline: 1px solid black;
 }
 
+.live-text{
+    text-align: right;
+}
+
 /* .box {
     background-color: red;
     outline: 1px solid black;
