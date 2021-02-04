@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Home | Project Title </title>
+    <title> Compare | Project Title </title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
         integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
         crossorigin="" />
@@ -20,22 +20,46 @@
 </head>
 
 <body>
-    <!-- If nav bar 
-        <nav class="navbar navbar-light bg-light">
-        <a class="navbar-brand" href="#">Logofont</a>
-        <ul class="navbar-nav ml-auto nav-ul">
-            <li class="nav-item nav-link" href="#">Map</li>
-            <li class="nav-item nav-link" href="#">Compare</li>
-        </ul>
-    </nav> -->
-    
-    <a href="../compare-page/compare.html">Switch to Compare Page</a>
-    <div id="map">
-        <!-- <button class = "btn">Compare</button> -->
+    <div class="container">
+        <div class="row mt-3">
+            <div class="col-md-8 col-xs-12">
+                <h1>ActiveSG Gym Tracker</h1>
+                <p>Some ActiveSG gyms are so popular that you need to queue to get in during peak hours. Using the data
+                    provided you can see the average occupancy of each gym over one-hour periods.</p>
+            </div>
+        </div>
+        <!-- Dropdown menu and first heatmap -->
+        <div class="row">
+            <!-- Selecting of gym dropdown -->
+            <form class="select-gym">
+                <!-- Outlet selection -->
+                <div>
+                    <label class="form-label">Select An ActiveSG Gym</label>
+                    <select class="form-control" name="single-gyms" id="single-gyms">
+                        <option value="bedok">Bedok</option>
+                        <option value="yishun">Yishun</option>
+                        <option value="woodlands">Woodlands</option>
+                    </select>
+                </div>
+                <!-- Timing Selection -->
+                <div>
+                    <label class="form-label">Select Time</label>
+                    <select class="form-control" name="single-time" id="single-time">
+                        <option value="all">Show All</option>
+                        <option value="seven-to-eleven">7AM - 11AM</option>
+                        <option value="eleven-to-three">11AM - 3PM</option>
+                        <option value="three-to-seven">3PM - 7PM</option>
+                        <option value="seven-to-ten">7PM - 10PM</option>
+                    </select>
+                </div>
+
+            </form>
+            <div>
+                
+            </div>
+        </div>
 
     </div>
-
-
     <!-- Axios cdn -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
     <!-- Apex chart cdn -->
