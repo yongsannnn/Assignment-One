@@ -1,14 +1,18 @@
 //Getting JSON file from source when page is loaded. 
 window.addEventListener("DOMContentLoaded", async function () {
+    // Getting data for weekly
     let response = await axios.get("https://gym-tracker.data.gov.sg/data/gym-formatted-data.json");
-    let data = response.data;
+    let response2 = await axios.get("https://gym-tracker.data.gov.sg/api/gymcapall/")
+    let data = response.data
+    let dailyData = response2.data
+    console.log(dailyData)
     // console.log(data);
     // console.log("object keys",Object.keys(data));
     // Object.keys(data).map(location => console.log(data[location]))
 
     //Setting up function to slice from weekly json file
     function getWeeklyTimings(location) {
-        let weekly = data[location].weekly_data;
+        let weekly = data[location].weekly_data
         weekly = weekly.map(innerArray =>
             innerArray.slice(7, 22)
         )
@@ -128,10 +132,10 @@ window.addEventListener("DOMContentLoaded", async function () {
 
     }
 
-    // create the chart
-    const heatOne = new ApexCharts(document.querySelector("#heat-one"), heatOneOptions);
+    // create the chart 1 
+    const heatOne = new ApexCharts(document.querySelector("#heat-one"), heatOneOptions)
 
-    // render the chart
+    // render the chart 1
     heatOne.render()
 
     // Chart Two - Comparision Outlet Chart
@@ -166,46 +170,61 @@ window.addEventListener("DOMContentLoaded", async function () {
 
     }
 
-    // create the chart
-    const heatTwo = new ApexCharts(document.querySelector("#heat-two"), heatTwoOptions);
+    // create the chart 2
+    const heatTwo = new ApexCharts(document.querySelector("#heat-two"), heatTwoOptions)
 
-    // render the chart
+    // render the chart 2
     heatTwo.render()
 
+    //Enable changes when selecting different gyms for Heatmap one
     let btn = document.querySelector("#single-gyms");
     btn.addEventListener("change", function () {
-        // alert(`You have selected ${btn.value}`)
+        //using value to project the new weekly data from weekly data
         let newWeekly = getWeeklyTimings(btn.value)
+        //using data-id and getAttribute tag to associate the option with the daily data 
         let newId = btn.querySelector(":checked").getAttribute("data-id")
-        console.log(newId)
+        // console.log(newId)
         heatOne.updateSeries([{
-                            name: "M",
-                    data: newWeekly[0]
-                },
-                {
-                    name: "T",
-                    data: newWeekly[1]
-                },
-                {
-                    name: "W",
-                    data: newWeekly[2]
-                },
-                {
-                    name: "T",
-                    data: newWeekly[3]
-                },
-                {
-                    name: "F",
-                    data: newWeekly[4]
-                },
-                {
-                    name: "S",
-                    data: newWeekly[5]
-                },
-                {
-                    name: "S",
-                    data: newWeekly[6]
-                
+            name: "M",
+            data: newWeekly[0]
+        },
+        {
+            name: "T",
+            data: newWeekly[1]
+        },
+        {
+            name: "W",
+            data: newWeekly[2]
+        },
+        {
+            name: "T",
+            data: newWeekly[3]
+        },
+        {
+            name: "F",
+            data: newWeekly[4]
+        },
+        {
+            name: "S",
+            data: newWeekly[5]
+        },
+        {
+            name: "S",
+            data: newWeekly[6]
+
         }])
     })
+
+    //Set up Bedok Live data on the webpage as default
+    //Need to counter check with option value data-id
+    let bedokLiveData = dailyData[8].percentage
+    let locationName = document.querySelector("#single-gyms").querySelector(":checked").value
+    console.log(bedokLiveData)
+    console.log(locationName)
+    let newText = document.querySelector(".live-text");
+    newText.innerHTML = (`
+    <h2>${locationName.toUpperCase()}</h2>
+    <h1>${bedokLiveData}%</h1>
+    <p>Occupied</p>
+    `)
 })
