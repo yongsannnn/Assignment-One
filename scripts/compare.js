@@ -5,7 +5,7 @@ window.addEventListener("DOMContentLoaded", async function () {
     let response2 = await axios.get("https://gym-tracker.data.gov.sg/api/gymcapall/")
     let data = response.data
     let dailyData = response2.data
-    console.log(dailyData)
+    // console.log(dailyData)
     // console.log(data);
     // console.log("object keys",Object.keys(data));
     // Object.keys(data).map(location => console.log(data[location]))
@@ -18,7 +18,11 @@ window.addEventListener("DOMContentLoaded", async function () {
         )
         return (weekly)
     }
-
+    
+    //Setting up a function to show the correct percentage from daily
+    function showLiveData(location){
+        let liveData;
+    }
     // Chart One - Individual Outlet Chart
     // Defining the chart options. 
     const heatOneOptions = {
@@ -213,14 +217,17 @@ window.addEventListener("DOMContentLoaded", async function () {
             data: newWeekly[6]
 
         }])
+        //Setting up on change to reflect correct occupancy.
+        let newLive = document.querySelector("#single-gyms").querySelector(":checked").getAttribute("data-id")
+        console.log(newLive);
     })
 
     //Set up Bedok Live data on the webpage as default
     //Need to counter check with option value data-id
     let bedokLiveData = dailyData[8].percentage
     let locationName = document.querySelector("#single-gyms").querySelector(":checked").value
-    console.log(bedokLiveData)
-    console.log(locationName)
+    // console.log(bedokLiveData)
+    // console.log(locationName)
     let newText = document.querySelector(".live-text");
     newText.innerHTML = (`
     <h2>${locationName.toUpperCase()}</h2>
