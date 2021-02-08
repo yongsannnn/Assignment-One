@@ -18,6 +18,22 @@ window.addEventListener("DOMContentLoaded", async function () {
         )
         return (weekly)
     }
+    //Setting up function to slice from weekly file with location and specific time when selected
+    function getSlicedTiming(location, time) {
+        let weekly = data[location].weekly_data;
+        let slicedTiming;
+        if (time == "seven-to-eleven") {
+            slicedTiming = weekly.map(innerArray => innerArray.slice(7, 12))
+        } else if (time == "eleven-to-three") {
+            slicedTiming = weekly.map(innerArray => innerArray.slice(11, 16))
+        } else if (time == "three-to-seven") {
+            slicedTiming = weekly.map(innerArray => innerArray.slice(15, 20))
+        } else if (time == "seven-to-ten") {
+            slicedTiming = weekly.map(innerArray => innerArray.slice(19, 22))
+        }
+        return (slicedTiming)
+    };
+
 
     //Setting up a function to show the correct percentage from daily
     function showLiveData(locationId) {
@@ -233,15 +249,29 @@ window.addEventListener("DOMContentLoaded", async function () {
     })
 
     //Set up Bedok Live data on the webpage as default
-    //Need to counter check with option value data-id
-    // let bedokLiveData = dailyData[8].percentage
-    // let locationName = document.querySelector("#single-gyms").querySelector(":checked").value
-    // // console.log(bedokLiveData)
-    // // console.log(locationName)
-    // let newText = document.querySelector(".live-text");
-    // newText.innerHTML = (`
-    // <h2>${locationName.toUpperCase()}</h2>
-    // <h1>${bedokLiveData}%</h1>
-    // <p>Occupied</p>
-    // `)
+    //Need to counter check with option value data-id, add in function to replace this and the one inside event listener
+    let bedokLiveData = dailyData[8].percentage
+    let locationName = document.querySelector("#single-gyms").querySelector(":checked").value
+    let newText = document.querySelector(".live-text");
+    newText.innerHTML = (`
+    <h2>${locationName.toUpperCase()}</h2>
+    <h1>${bedokLiveData}%</h1>
+    <p>Occupied</p>
+    `)
+
+    //Set up for sliced timing if chosen
+    let timeBtn = document.querySelector("#single-time");
+    timeBtn.addEventListener("change", function () {
+        let locationName = document.querySelector("#single-gyms").querySelector(":checked").value
+        let newTime = timeBtn.querySelector(":checked").value;
+        if (newTime == "seven-to-eleven") {
+            console.log(getSlicedTiming(locationName,newTime))
+            heatOne.updateOptions({
+                xaxis: {
+                    categories: ["7A", "8A", "9A", "10A"]
+                }
+            })
+        }
+        console.log(newTime);
+    })
 })
