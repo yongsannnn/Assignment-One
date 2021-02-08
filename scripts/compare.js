@@ -18,10 +18,14 @@ window.addEventListener("DOMContentLoaded", async function () {
         )
         return (weekly)
     }
-    
+
     //Setting up a function to show the correct percentage from daily
-    function showLiveData(location){
-        let liveData;
+    function showLiveData(locationId) {
+        for (i in dailyData) {
+            if (locationId == dailyData[i].id) {
+                return dailyData[i].percentage
+            }
+        }
     }
     // Chart One - Individual Outlet Chart
     // Defining the chart options. 
@@ -218,20 +222,26 @@ window.addEventListener("DOMContentLoaded", async function () {
 
         }])
         //Setting up on change to reflect correct occupancy.
+        let locationName = document.querySelector("#single-gyms").querySelector(":checked").value
         let newLive = document.querySelector("#single-gyms").querySelector(":checked").getAttribute("data-id")
-        console.log(newLive);
+        let newText = document.querySelector(".live-text");
+        newText.innerHTML = (`
+        <h2>${locationName.toUpperCase()}</h2>
+        <h1>${showLiveData(newLive)}%</h1>
+        <p>Occupied</p>
+        `)
     })
 
     //Set up Bedok Live data on the webpage as default
     //Need to counter check with option value data-id
-    let bedokLiveData = dailyData[8].percentage
-    let locationName = document.querySelector("#single-gyms").querySelector(":checked").value
-    // console.log(bedokLiveData)
-    // console.log(locationName)
-    let newText = document.querySelector(".live-text");
-    newText.innerHTML = (`
-    <h2>${locationName.toUpperCase()}</h2>
-    <h1>${bedokLiveData}%</h1>
-    <p>Occupied</p>
-    `)
+    // let bedokLiveData = dailyData[8].percentage
+    // let locationName = document.querySelector("#single-gyms").querySelector(":checked").value
+    // // console.log(bedokLiveData)
+    // // console.log(locationName)
+    // let newText = document.querySelector(".live-text");
+    // newText.innerHTML = (`
+    // <h2>${locationName.toUpperCase()}</h2>
+    // <h1>${bedokLiveData}%</h1>
+    // <p>Occupied</p>
+    // `)
 })
