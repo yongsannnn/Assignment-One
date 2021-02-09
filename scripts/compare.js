@@ -18,18 +18,85 @@ window.addEventListener("DOMContentLoaded", async function () {
         )
         return (weekly)
     }
+
+    //Setting up a function to return an object that can be used for updateSeries
+    function getNewUpdateSeries(slicedTiming) {
+        let slicedArray = [{
+            name: "M",
+            data: slicedTiming[0]
+        },
+        {
+            name: "T",
+            data: slicedTiming[1]
+        },
+        {
+            name: "W",
+            data: slicedTiming[2]
+        },
+        {
+            name: "T",
+            data: slicedTiming[3]
+        },
+        {
+            name: "F",
+            data: slicedTiming[4]
+        },
+        {
+            name: "S",
+            data: slicedTiming[5]
+        },
+        {
+            name: "S",
+            data: slicedTiming[6]
+
+        }]
+        return slicedArray
+    }
     //Setting up function to slice from weekly file with location and specific time when selected
     function getSlicedTiming(location, time) {
         let weekly = data[location].weekly_data;
         let slicedTiming;
         if (time == "seven-to-eleven") {
-            slicedTiming = weekly.map(innerArray => innerArray.slice(7, 12))
+            slicedTiming = weekly.map(innerArray => innerArray.slice(7, 11))
+            heatOne.updateOptions({
+                xaxis: {
+                    categories: ["7A", "8A", "9A", "10A"]
+                }
+            })
+            // console.log(getNewUpdateSeries(slicedTiming));
+            heatOne.updateSeries(getNewUpdateSeries(slicedTiming))
         } else if (time == "eleven-to-three") {
-            slicedTiming = weekly.map(innerArray => innerArray.slice(11, 16))
+            slicedTiming = weekly.map(innerArray => innerArray.slice(11, 15))
+            heatOne.updateOptions({
+                xaxis: {
+                    categories: ["11A", "12P", "1P", "2P"]
+                }
+            })
+            heatOne.updateSeries(getNewUpdateSeries(slicedTiming))
         } else if (time == "three-to-seven") {
-            slicedTiming = weekly.map(innerArray => innerArray.slice(15, 20))
+            slicedTiming = weekly.map(innerArray => innerArray.slice(15, 19))
+            heatOne.updateOptions({
+                xaxis: {
+                    categories: ["3P", "4P", "5P", "6P"]
+                }
+            })
+            heatOne.updateSeries(getNewUpdateSeries(slicedTiming))
         } else if (time == "seven-to-ten") {
             slicedTiming = weekly.map(innerArray => innerArray.slice(19, 22))
+            heatOne.updateOptions({
+                xaxis: {
+                    categories: ["7P", "8P", "9P"]
+                }
+            })
+            heatOne.updateSeries(getNewUpdateSeries(slicedTiming))
+        } else {
+            slicedTiming = getWeeklyTimings(location)
+            heatOne.updateOptions({
+                xaxis: {
+                    categories: ["7A", "8A", "9A", "10A", "11A", "12P", "1P", "2P", "3P", "4P", "5P", "6P", "7P", "8P", "9P"]
+                }
+            })
+            heatOne.updateSeries(getNewUpdateSeries(slicedTiming))
         }
         return (slicedTiming)
     };
@@ -237,6 +304,11 @@ window.addEventListener("DOMContentLoaded", async function () {
             data: newWeekly[6]
 
         }])
+        heatOne.updateOptions({
+            xaxis: {
+                categories: ["7A", "8A", "9A", "10A", "11A", "12P", "1P", "2P", "3P", "4P", "5P", "6P", "7P", "8P", "9P"]
+            }
+        })
         //Setting up on change to reflect correct occupancy.
         let locationName = document.querySelector("#single-gyms").querySelector(":checked").value
         let newLive = document.querySelector("#single-gyms").querySelector(":checked").getAttribute("data-id")
@@ -264,14 +336,9 @@ window.addEventListener("DOMContentLoaded", async function () {
     timeBtn.addEventListener("change", function () {
         let locationName = document.querySelector("#single-gyms").querySelector(":checked").value
         let newTime = timeBtn.querySelector(":checked").value;
-        if (newTime == "seven-to-eleven") {
-            console.log(getSlicedTiming(locationName,newTime))
-            heatOne.updateOptions({
-                xaxis: {
-                    categories: ["7A", "8A", "9A", "10A"]
-                }
-            })
-        }
-        console.log(newTime);
-    })
+        getSlicedTiming(locationName, newTime)
+
+    }
+        // console.log(newTime);
+    )
 })
