@@ -19,15 +19,24 @@ window.addEventListener("DOMContentLoaded", async function () {
     let data = response.data;
     let activeGym = data.features.filter(des => des.properties.Description.includes("ClubFITT"));
     // console.log(activeGym)
-
     let layer = L.geoJson(activeGym, {
         onEachFeature: function (feature, layer) {
-            console.log(feature)
             let divElement = document.createElement("div");
             divElement.innerHTML = feature.properties.Description;
             let gymName = divElement.querySelectorAll("td")[13].innerHTML;
-
-            layer.bindPopup(`Name: ${gymName}`);
+            let gymDescription = divElement.querySelectorAll("td")[10].innerHTML;
+            let postalCode = divElement.querySelectorAll("td")[2].innerHTML;
+            // let teleNum = gymDescription.match(/Tel:(.*)/);
+            let streetName = divElement.querySelectorAll("td")[8].innerHTML;
+            let blockNum = divElement.querySelectorAll("td")[9].innerHTML;
+            let operatingHours = gymDescription.match(/Operating(.*) Holiday\)/)[0];
+            layer.bindPopup(`
+            <h5>${gymName}</h5>
+            <p> Postal Code: ${postalCode}</p>
+            <p> Telephone Number: </p>
+            <p> Address: ${blockNum} ${streetName}</p>
+            <p> ${operatingHours}</p>
+            `);
         }
     })
     layer.addTo(map);
