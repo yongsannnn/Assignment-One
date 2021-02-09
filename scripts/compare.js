@@ -275,6 +275,8 @@ window.addEventListener("DOMContentLoaded", async function () {
         //using data-id and getAttribute tag to associate the option with the daily data 
         let newId = btn.querySelector(":checked").getAttribute("data-id")
         // console.log(newId)
+        //Reset value of single time back to all when change gym. 
+        document.querySelector("#single-time").value = "all"
         heatOne.updateSeries([{
             name: "M",
             data: newWeekly[0]
@@ -337,8 +339,5 @@ window.addEventListener("DOMContentLoaded", async function () {
         let locationName = document.querySelector("#single-gyms").querySelector(":checked").value
         let newTime = timeBtn.querySelector(":checked").value;
         getSlicedTiming(locationName, newTime)
-
-    }
-        // console.log(newTime);
-    )
+    })
 })
