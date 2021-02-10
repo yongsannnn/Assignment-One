@@ -26,16 +26,19 @@ window.addEventListener("DOMContentLoaded", async function () {
             let gymName = divElement.querySelectorAll("td")[13].innerHTML;
             let gymDescription = divElement.querySelectorAll("td")[10].innerHTML;
             let postalCode = divElement.querySelectorAll("td")[2].innerHTML;
-            // let teleNum = gymDescription.match(/Tel:(.*)/);
+            let teleNum = gymDescription.match(/Tel:(.*)/);
+            if (teleNum == null){
+                teleNum = "--"
+            }
             let streetName = divElement.querySelectorAll("td")[8].innerHTML;
             let blockNum = divElement.querySelectorAll("td")[9].innerHTML;
-            let operatingHours = gymDescription.match(/Operating(.*) Holiday\)/)[0];
+            let operatingHours = gymDescription.match(/7(.*) Holiday\)/)[0];
             layer.bindPopup(`
             <h5>${gymName}</h5>
             <p> Postal Code: ${postalCode}</p>
-            <p> Telephone Number: </p>
+            <p> Telephone Number: ${teleNum[1]}</p>
             <p> Address: ${blockNum} ${streetName}</p>
-            <p> ${operatingHours}</p>
+            <p> Operating Hours: ${operatingHours}</p>
             `);
         }
     })
