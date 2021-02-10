@@ -14,24 +14,32 @@ L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 
 // Creating objects to store key/value pair for Location and ID
 const gymValueToId = {
-    "bedok" : "127",
-    "bishan" : "137",
-    "bukit gombak" : "145",
-    "choa chu kang" : "154",
-    "clementi" : "160",
-    "delta" : "166",
-    "hougang" : "185",
-    "jurong east" : "196",
-    "jurong west" : "200",
-    "pasir ris" : "544",
-    "sengkang" : "239",
-    "tampines" : "257",
-    "toa payoh" : "268",
-    "woodlands" : "274",
-    "yio chu kang" : "279",
-    "yishun" : "284",
+    "bedok": "127",
+    "bishan": "137",
+    "bukit gombak": "145",
+    "choa chu kang": "154",
+    "clementi": "160",
+    "delta": "166",
+    "hougang": "185",
+    "jurong east": "196",
+    "jurong west": "200",
+    "pasir ris": "544",
+    "sengkang": "239",
+    "tampines": "257",
+    "toa payoh": "268",
+    "woodlands": "274",
+    "yio chu kang": "279",
+    "yishun": "284",
 }
-console.log(gymValueToId);
+
+//Creating a function to return ID based on the location name. 
+function locationToID(location) {
+    for (let i in gymValueToId) {
+        if (location.includes(i) == true) {
+            return (gymValueToId[i])
+        }
+    }
+}
 
 //Importing data for locations of gyms in Singapore
 window.addEventListener("DOMContentLoaded", async function () {
@@ -40,6 +48,7 @@ window.addEventListener("DOMContentLoaded", async function () {
     let response2 = await axios.get("https://gym-tracker.data.gov.sg/api/gymcapall/")
     let data = response.data;
     let dailyData = response2.data;
+
     let activeGym = data.features.filter(des => des.properties.Description.includes("ClubFITT"));
     // console.log(activeGym)
     let layer = L.geoJson(activeGym, {
@@ -50,25 +59,26 @@ window.addEventListener("DOMContentLoaded", async function () {
             let gymDescription = divElement.querySelectorAll("td")[10].innerHTML;
             let postalCode = divElement.querySelectorAll("td")[2].innerHTML;
             let teleNum = gymDescription.match(/Tel:(.*)/);
-            if (teleNum == null){
+            // If telephone number does not exist, change it to --
+            if (teleNum == null) {
                 teleNum = "--"
             }
             let streetName = divElement.querySelectorAll("td")[8].innerHTML;
             let blockNum = divElement.querySelectorAll("td")[9].innerHTML;
             let operatingHours = gymDescription.match(/7(.*) Holiday\)/)[0];
+            let locationId = locationToID(gymName.toLowerCase())
+
+
             layer.bindPopup(`
             <h5>${gymName}</h5>
             <p> Postal Code: ${postalCode}</p>
-            <p> Telephone Number: ${teleNum[1]}</p>
+            <p> Tel: ${teleNum[1]}</p>
             <p> Address: ${blockNum} ${streetName}</p>
             <p> Operating Hours: ${operatingHours}</p>
+            <p> Live Occupancy Rate: ${showLiveData(locationId, dailyData)}</p>
             `);
         }
     })
     layer.addTo(map);
 });
 
-
-function locationToID(location){
-
-}

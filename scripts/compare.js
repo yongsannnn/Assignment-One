@@ -1,3 +1,12 @@
+//Setting up a function to show the correct percentage from daily
+function showLiveData(locationId, dailyData) {
+    for (let i in dailyData) {
+        if (locationId == dailyData[i].id) {
+            return dailyData[i].percentage
+        }
+    }
+}
+
 //Getting JSON file from source when page is loaded. 
 window.addEventListener("DOMContentLoaded", async function () {
     // Getting data for weekly
@@ -101,15 +110,6 @@ window.addEventListener("DOMContentLoaded", async function () {
         return (slicedTiming)
     };
 
-
-    //Setting up a function to show the correct percentage from daily
-    function showLiveData(locationId) {
-        for (i in dailyData) {
-            if (locationId == dailyData[i].id) {
-                return dailyData[i].percentage
-            }
-        }
-    }
     // Chart One - Individual Outlet Chart
     // Defining the chart options. 
     const heatOneOptions = {
@@ -317,7 +317,7 @@ window.addEventListener("DOMContentLoaded", async function () {
         let newText = document.querySelector(".live-text");
         newText.innerHTML = (`
         <h2>${locationName.toUpperCase()}</h2>
-        <h1>${showLiveData(newLive)}%</h1>
+        <h1>${showLiveData(newLive, dailyData)}%</h1>
         <p>Occupied</p>
         `)
     })
