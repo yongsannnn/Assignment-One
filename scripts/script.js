@@ -12,11 +12,34 @@ L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
     accessToken: "pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw"
 }).addTo(map);
 
+// Creating objects to store key/value pair for Location and ID
+const gymValueToId = {
+    "bedok" : "127",
+    "bishan" : "137",
+    "bukit gombak" : "145",
+    "choa chu kang" : "154",
+    "clementi" : "160",
+    "delta" : "166",
+    "hougang" : "185",
+    "jurong east" : "196",
+    "jurong west" : "200",
+    "pasir ris" : "544",
+    "sengkang" : "239",
+    "tampines" : "257",
+    "toa payoh" : "268",
+    "woodlands" : "274",
+    "yio chu kang" : "279",
+    "yishun" : "284",
+}
+console.log(gymValueToId);
+
 //Importing data for locations of gyms in Singapore
 window.addEventListener("DOMContentLoaded", async function () {
 
     let response = await axios.get("gyms-location.geojson")
+    let response2 = await axios.get("https://gym-tracker.data.gov.sg/api/gymcapall/")
     let data = response.data;
+    let dailyData = response2.data;
     let activeGym = data.features.filter(des => des.properties.Description.includes("ClubFITT"));
     // console.log(activeGym)
     let layer = L.geoJson(activeGym, {
@@ -44,3 +67,8 @@ window.addEventListener("DOMContentLoaded", async function () {
     })
     layer.addTo(map);
 });
+
+
+function locationToID(location){
+
+}
