@@ -31,7 +31,17 @@ const gymValueToId = {
     "yio chu kang": "279",
     "yishun": "284",
 }
+//Get and show current Location
+var myLocation = document.getElementById("my-location");
 
+function getLocation() {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  }
+
+function showPosition(position) {
+  myLocation.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+}
 //Creating a function to return ID based on the location name. 
 function locationToID(location) {
     for (let i in gymValueToId) {
