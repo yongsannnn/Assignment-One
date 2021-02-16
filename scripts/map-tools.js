@@ -1,5 +1,7 @@
 const currentLocationIcon = L.icon({
-    iconUrl:"../images/pin.png"
+    iconUrl: "../images/pin.png",
+    iconSize:[40,40],
+    iconAnchor: [20, 25],
 })
 
 //Get and show current Location
@@ -10,10 +12,10 @@ function getLocation() {
 }
 function showPosition(position) {
     new L.Marker([position.coords.latitude, position.coords.longitude], {
-      icon: currentLocationIcon,
+        icon: currentLocationIcon,
     })
-      .bindPopup("You are here!")
-      .addTo(map)
+        .bindPopup("You are here!")
+        .addTo(map)
     // myLocation.innerHTML = "Latitude: " + position.coords.latitude +
     //     "<br>Longitude: " + position.coords.longitude;
 }
