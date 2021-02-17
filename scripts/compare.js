@@ -1,12 +1,3 @@
-//Setting up a function to show the correct percentage from daily
-function showLiveData(locationId, dailyData) {
-    for (let i in dailyData) {
-        if (locationId == dailyData[i].id) {
-            return dailyData[i].percentage
-        }
-    }
-}
-
 //Getting JSON file from source when page is loaded. 
 window.addEventListener("DOMContentLoaded", async function () {
     // Getting data for weekly

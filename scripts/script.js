@@ -12,34 +12,6 @@ L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
     accessToken: "pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw"
 }).addTo(map);
 
-// Creating objects to store key/value pair for Location and ID
-const gymValueToId = {
-    "bedok": "127",
-    "bishan": "137",
-    "bukit gombak": "145",
-    "choa chu kang": "154",
-    "clementi": "160",
-    "delta": "166",
-    "hougang": "185",
-    "jurong east": "196",
-    "jurong west": "200",
-    "pasir ris": "544",
-    "sengkang": "239",
-    "tampines": "257",
-    "toa payoh": "268",
-    "woodlands": "274",
-    "yio chu kang": "279",
-    "yishun": "284",
-}
-
-//Creating a function to return ID based on the location name. 
-function locationToID(location) {
-    for (let i in gymValueToId) {
-        if (location.includes(i) == true) {
-            return (gymValueToId[i])
-        }
-    }
-}
 
 //Importing data for locations of gyms in Singapore
 window.addEventListener("DOMContentLoaded", async function () {
@@ -50,7 +22,8 @@ window.addEventListener("DOMContentLoaded", async function () {
     let dailyData = response2.data;
 
     let activeGym = data.features.filter(des => des.properties.Description.includes("ClubFITT"));
-    // console.log(activeGym)
+    console.log(activeGym)
+    //Plotting each location into the map
     let layer = L.geoJson(activeGym, {
         onEachFeature: function (feature, layer) {
             let divElement = document.createElement("div");
@@ -77,8 +50,13 @@ window.addEventListener("DOMContentLoaded", async function () {
             <p> Operating Hours: ${operatingHours}</p>
             <p> Live Occupancy Rate: ${showLiveData(locationId, dailyData)}</p>
             `);
-        }
-    })
+            //Function when click will zoom into the outlet and show bindPopup
+            layer.on("click", function (e) {
+               map.setView(e.latlng, 16)
+            });
+            
+        }// end of onEachFeature
+    }) // end of L.geoJson
     layer.addTo(map);
 });
 
