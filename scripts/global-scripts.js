@@ -18,6 +18,28 @@ const gymValueToId = {
     "yishun": "284",
 }
 
+//Declaring global coordinates for each location to be an empty array
+const bedokCoor = []
+const bishanCoor = []
+const bukitGombakCoor = []
+const choaChuKangCoor = []
+const clementiCoor = []
+const deltaCoor = []
+const hougangCoor = []
+const jurongEastCoor = []
+const jurongWestCoor = []
+const pasirRisCoor = []
+const sengkangCoor = []
+const tampinesCoor = []
+const toaPaYohCoor = []
+const woodlandsCoor = []
+const yioChuKangCoor = []
+const yishunCoor = []
+
+function getCoor(data){
+    
+}
+
 //Creating a function to return ID based on the location name. 
 function locationToID(location) {
     for (let i in gymValueToId) {

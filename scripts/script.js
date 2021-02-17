@@ -52,11 +52,25 @@ window.addEventListener("DOMContentLoaded", async function () {
             `);
             //Function when click will zoom into the outlet and show bindPopup
             layer.on("click", function (e) {
-               map.setView(e.latlng, 16)
+                map.setView(e.latlng, 16)
             });
-            
+
         }// end of onEachFeature
     }) // end of L.geoJson
     layer.addTo(map);
+
+    //Getting Coordinates for each location
+    for (i = 0; i < data.features.length; i++) {
+        if (data.features[i].properties.Description.includes("Bedok") == true) {
+            bedokCoor.push(data.features[i].geometry.coordinates[1])
+            bedokCoor.push(data.features[i].geometry.coordinates[0])
+        }
+    }
+    console.log(bedokCoor)
+    let bedokBtn = document.querySelector("#bedok-clicked");
+    bedokBtn.addEventListener("click",function(){
+        
+        map.setView(bedokCoor, 16);
+    })
 });
 
