@@ -22,7 +22,7 @@ window.addEventListener("DOMContentLoaded", async function () {
     let dailyData = response2.data;
 
     let activeGym = data.features.filter(des => des.properties.Description.includes("ClubFITT"));
-    console.log(activeGym)
+    // console.log(activeGym)
     //Plotting each location into the map
     let layer = L.geoJson(activeGym, {
         onEachFeature: function (feature, layer) {
@@ -60,17 +60,26 @@ window.addEventListener("DOMContentLoaded", async function () {
     layer.addTo(map);
 
     //Getting Coordinates for each location
-    for (i = 0; i < data.features.length; i++) {
-        if (data.features[i].properties.Description.includes("Bedok") == true) {
-            bedokCoor.push(data.features[i].geometry.coordinates[1])
-            bedokCoor.push(data.features[i].geometry.coordinates[0])
+    for (i = 0; i < activeGym.length; i++) {
+        if (activeGym[i].properties.Description.includes("Bedok") == true) {
+            bedokCoor.push(activeGym[i].geometry.coordinates[1])
+            bedokCoor.push(activeGym[i].geometry.coordinates[0])
+        }
+        if (activeGym[i].properties.Description.includes("Bishan") == true) {
+            bishanCoor.push(activeGym[i].geometry.coordinates[1])
+            bishanCoor.push(activeGym[i].geometry.coordinates[0])
         }
     }
-    console.log(bedokCoor)
+    console.log(bedokCoor, bishanCoor)
     let bedokBtn = document.querySelector("#bedok-clicked");
-    bedokBtn.addEventListener("click",function(){
-        
+    bedokBtn.addEventListener("click", function () {
+
         map.setView(bedokCoor, 16);
+    })
+    let bishanBtn = document.querySelector("#bishan-clicked");
+    bishanBtn.addEventListener("click", function () {
+
+        map.setView(bishanCoor, 16);
     })
 });
 
