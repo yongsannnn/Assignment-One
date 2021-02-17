@@ -36,6 +36,7 @@ const woodlandsCoor = []
 const yioChuKangCoor = []
 const yishunCoor = []
 
+//Declaring global homepage url
 const gymHomepage = {
     "bedok": "https://www.myactivesg.com/Facilities/heartbeat-bedok-activesg-gymnasium",
     "bishan": "https://www.myactivesg.com/Facilities/bishan-activesg-gym",
