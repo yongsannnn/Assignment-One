@@ -60,32 +60,37 @@ window.addEventListener("DOMContentLoaded", async function () {
     layer.addTo(map);
 
     //Getting Coordinates for each location
-    getCoor(activeGym,"Bedok",bedokCoor)
-    getCoor(activeGym,"Bishan",bishanCoor)
-    getCoor(activeGym,"Bukit Gombak",bukitGombakCoor)
-    getCoor(activeGym,"Choa Chu Kang",choaChuKangCoor)
-    getCoor(activeGym,"Clementi",clementiCoor)
-    getCoor(activeGym,"Delta",deltaCoor)
-    getCoor(activeGym,"Hougang",hougangCoor)
-    getCoor(activeGym,"Jurong East",jurongEastCoor)
-    getCoor(activeGym,"Jurong West",jurongWestCoor)
-    getCoor(activeGym,"Pasir Ris",pasirRisCoor)
-    getCoor(activeGym,"Sengkang",sengkangCoor)
-    getCoor(activeGym,"Tampines",tampinesCoor)
-    getCoor(activeGym,"Toa Payoh",toaPayohCoor)
-    getCoor(activeGym,"Woodlands",woodlandsCoor)
-    getCoor(activeGym,"Yio Chu Kang",yioChuKangCoor)
-    getCoor(activeGym,"Yishun",yishunCoor)
-    
+    getCoor(activeGym, "Bedok", bedokCoor)
+    getCoor(activeGym, "Bishan", bishanCoor)
+    getCoor(activeGym, "Bukit Gombak", bukitGombakCoor)
+    getCoor(activeGym, "Choa Chu Kang", choaChuKangCoor)
+    getCoor(activeGym, "Clementi", clementiCoor)
+    getCoor(activeGym, "Delta", deltaCoor)
+    getCoor(activeGym, "Hougang", hougangCoor)
+    getCoor(activeGym, "Jurong East", jurongEastCoor)
+    getCoor(activeGym, "Jurong West", jurongWestCoor)
+    getCoor(activeGym, "Pasir Ris", pasirRisCoor)
+    getCoor(activeGym, "Sengkang", sengkangCoor)
+    getCoor(activeGym, "Tampines", tampinesCoor)
+    getCoor(activeGym, "Toa Payoh", toaPayohCoor)
+    getCoor(activeGym, "Woodlands", woodlandsCoor)
+    getCoor(activeGym, "Yio Chu Kang", yioChuKangCoor)
+    getCoor(activeGym, "Yishun", yishunCoor)
 
 
-    console.log(bedokCoor,bishanCoor)
+
+    let showBtn = document.querySelector("#show-gyms")
+    showBtn.addEventListener("change", function () {
+        let selectedValue = showBtn.querySelector(":checked").value
+        zoomOnChange(selectedValue)
+    });
+
     // Setting up event listener to enable zoom on click of button.
-    let bedokBtn = document.querySelector("#bedok-clicked")
-    zoomOnClick(bedokBtn, bedokCoor)
+    // let bedokBtn = document.querySelector("#bedok-clicked")
+    // zoomOnClick(bedokBtn, bedokCoor)
 
-    let bishanBtn = document.querySelector("#bishan-clicked")
-    zoomOnClick(bishanBtn,bishanCoor)
+    // let bishanBtn = document.querySelector("#bishan-clicked")
+    // zoomOnClick(bishanBtn, bishanCoor)
     // let bedokBtn = document.querySelector("#bedok-clicked").addEventListener("click", function () {
     //     map.setView(bedokCoor, 16);
     // })
@@ -93,5 +98,5 @@ window.addEventListener("DOMContentLoaded", async function () {
     //     map.setView(bishanCoor, 16);
     // })
 
-});
+}); //End of Window Listener
 

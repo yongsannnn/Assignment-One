@@ -49,11 +49,11 @@ function getCoor(data, name, coorName) {
 }
 
 //Creating a function to add eventlistener to enable zoom on click
-function zoomOnClick(btnName,coorName) {
-    btnName.addEventListener("click", function () {
-        map.setView(coorName, 16);
-    })
-}
+// function zoomOnClick(btnName,coorName) {
+//     btnName.addEventListener("click", function () {
+//         map.setView(coorName, 16);
+//     })
+// }
 
 //Creating a function to return ID based on the location name. 
 function locationToID(location) {
