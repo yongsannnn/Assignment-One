@@ -20,7 +20,7 @@
 </head>
 
 <body>
-   
+
     <a href="../compare-page/compare.html">Switch to Compare Page</a>
     <button onclick="getLocation()">Get My Location</button>
     <p id="my-location"></p>
@@ -28,7 +28,31 @@
         <button id="bedok-clicked">Bedok</button>
     </div>
     <div>
-        <button id="bishan-clicked">Bishan</button> 
+        <button id="bishan-clicked">Bishan</button>
+    </div>
+
+    <div class="row">
+        <div class="col-6">
+            <label class="form-label">Select An ActiveSG Gym</label>
+            <select class="form-control" name="show-gym" id="show-gyms">
+                <option value="bedok" data-id="127">Bedok</option>
+                <option value="bishan" data-id="137">Bishan</option>
+                <option value="bukit_gombak" data-id="145">Bukit Gombak</option>
+                <option value="cck" data-id="154">Choa Chu Kang</option>
+                <option value="clementi" data-id="160">Clementi</option>
+                <option value="delta" data-id="166">Delta</option>
+                <option value="hougang" data-id="185">Hougang</option>
+                <option value="jurong_east" data-id="196">Jurong East</option>
+                <option value="jurong_west" data-id="200">Jurong West</option>
+                <option value="pasir_ris" data-id="544">Pasir Ris</option>
+                <option value="sengkang" data-id="239">Sengkang</option>
+                <option value="tampines" data-id="257">Tampines</option>
+                <option value="toa_payoh" data-id="268">Toa Payoh</option>
+                <option value="woodlands" data-id="274">Woodlands</option>
+                <option value="yck" data-id="279">Yio Chu Kang</option>
+                <option value="yishun" data-id="284">Yishun</option>
+            </select>
+        </div>
     </div>
     <div id="map">
 

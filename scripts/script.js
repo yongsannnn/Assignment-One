@@ -60,26 +60,38 @@ window.addEventListener("DOMContentLoaded", async function () {
     layer.addTo(map);
 
     //Getting Coordinates for each location
-    for (i = 0; i < activeGym.length; i++) {
-        if (activeGym[i].properties.Description.includes("Bedok") == true) {
-            bedokCoor.push(activeGym[i].geometry.coordinates[1])
-            bedokCoor.push(activeGym[i].geometry.coordinates[0])
-        }
-        if (activeGym[i].properties.Description.includes("Bishan") == true) {
-            bishanCoor.push(activeGym[i].geometry.coordinates[1])
-            bishanCoor.push(activeGym[i].geometry.coordinates[0])
-        }
-    }
-    console.log(bedokCoor, bishanCoor)
-    let bedokBtn = document.querySelector("#bedok-clicked");
-    bedokBtn.addEventListener("click", function () {
+    getCoor(activeGym,"Bedok",bedokCoor)
+    getCoor(activeGym,"Bishan",bishanCoor)
+    getCoor(activeGym,"Bukit Gombak",bukitGombakCoor)
+    getCoor(activeGym,"Choa Chu Kang",choaChuKangCoor)
+    getCoor(activeGym,"Clementi",clementiCoor)
+    getCoor(activeGym,"Delta",deltaCoor)
+    getCoor(activeGym,"Hougang",hougangCoor)
+    getCoor(activeGym,"Jurong East",jurongEastCoor)
+    getCoor(activeGym,"Jurong West",jurongWestCoor)
+    getCoor(activeGym,"Pasir Ris",pasirRisCoor)
+    getCoor(activeGym,"Sengkang",sengkangCoor)
+    getCoor(activeGym,"Tampines",tampinesCoor)
+    getCoor(activeGym,"Toa Payoh",toaPayohCoor)
+    getCoor(activeGym,"Woodlands",woodlandsCoor)
+    getCoor(activeGym,"Yio Chu Kang",yioChuKangCoor)
+    getCoor(activeGym,"Yishun",yishunCoor)
+    
 
-        map.setView(bedokCoor, 16);
-    })
-    let bishanBtn = document.querySelector("#bishan-clicked");
-    bishanBtn.addEventListener("click", function () {
 
-        map.setView(bishanCoor, 16);
-    })
+    console.log(bedokCoor,bishanCoor)
+    // Setting up event listener to enable zoom on click of button.
+    let bedokBtn = document.querySelector("#bedok-clicked")
+    zoomOnClick(bedokBtn, bedokCoor)
+
+    let bishanBtn = document.querySelector("#bishan-clicked")
+    zoomOnClick(bishanBtn,bishanCoor)
+    // let bedokBtn = document.querySelector("#bedok-clicked").addEventListener("click", function () {
+    //     map.setView(bedokCoor, 16);
+    // })
+    // let bishanBtn = document.querySelector("#bishan-clicked").addEventListener("click", function () {
+    //     map.setView(bishanCoor, 16);
+    // })
+
 });
 

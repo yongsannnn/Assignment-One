@@ -31,13 +31,28 @@ const jurongWestCoor = []
 const pasirRisCoor = []
 const sengkangCoor = []
 const tampinesCoor = []
-const toaPaYohCoor = []
+const toaPayohCoor = []
 const woodlandsCoor = []
 const yioChuKangCoor = []
 const yishunCoor = []
 
-function getCoor(data){
-    
+//Creating a function to get Coordinates for each location
+function getCoor(data, name, coorName) {
+    for (i = 0; i < data.length; i++) {
+        // console.log(data[i])
+        if (data[i].properties.Description.includes(name) == true) {
+            coorName.push(data[i].geometry.coordinates[1])
+            coorName.push(data[i].geometry.coordinates[0])
+        }
+    }
+    return coorName
+}
+
+//Creating a function to add eventlistener to enable zoom on click
+function zoomOnClick(btnName,coorName) {
+    btnName.addEventListener("click", function () {
+        map.setView(coorName, 16);
+    })
 }
 
 //Creating a function to return ID based on the location name. 
