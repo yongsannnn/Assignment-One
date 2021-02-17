@@ -36,6 +36,26 @@ const woodlandsCoor = []
 const yioChuKangCoor = []
 const yishunCoor = []
 
+const gymHomepage = {
+    "bedok": "https://www.myactivesg.com/Facilities/heartbeat-bedok-activesg-gymnasium",
+    "bishan": "https://www.myactivesg.com/Facilities/bishan-activesg-gym",
+    "bukit gombak": "https://www.myactivesg.com/Facilities/bukit-gombak-activesg-gym",
+    "choa chu kang": "https://www.myactivesg.com/Facilities/choa-chu-kang-activesg-gym",
+    "clementi": "https://www.myactivesg.com/Facilities/clementi-activesg-gym",
+    "delta": "https://www.myactivesg.com/Facilities/delta-activesg-gym",
+    "hougang": "https://www.myactivesg.com/Facilities/hougang-activesg-gym",
+    "jurong east": "https://www.myactivesg.com/Facilities/jurong-east-activesg-gym",
+    "jurong west": "https://www.myactivesg.com/Facilities/jurong-west-activesg-gym",
+    "pasir ris": "https://www.myactivesg.com/Facilities/pasir-ris-activesg-gym",
+    "sengkang": "https://www.myactivesg.com/Facilities/sengkang-activesg-gym",
+    "tampines": "https://www.myactivesg.com/Facilities/tampines-activesg-gym",
+    "toa payoh": "https://www.myactivesg.com/Facilities/toa-payoh-activesg-gym",
+    "woodlands": "https://www.myactivesg.com/Facilities/woodlands-activesg-gym",
+    "yio chu kang": "https://www.myactivesg.com/Facilities/yio-chu-kang-activesg-gym",
+    "yishun": "https://www.myactivesg.com/Facilities/yishun-activesg-gym",
+}
+
+
 //Creating a function to get Coordinates for each location
 function getCoor(data, name, coorName) {
     for (i = 0; i < data.length; i++) {
