@@ -21,23 +21,14 @@
 
 <body>
 
-    <a href="../compare-page/compare.html">Switch to Compare Page</a>
-    <button onclick="getLocation()">Get My Location</button>
-    <p id="my-location"></p>
-    <!-- <div>
-        <button id="bedok-clicked">Bedok</button>
-    </div>
-    <div>
-        <button id="bishan-clicked">Bishan</button>
-    </div> -->
-    <a href="../compare-page/compare.html" value="bedok">Bedok</a>
+
     <div class="wrapper">
         <div id="map">
         </div>
         <div class="row selection">
             <div class="col-6">
-                <label class="form-label">Select An ActiveSG Gym</label>
-                <select class="form-control" name="show-gym" id="show-gyms">
+                <label class="form-label">Select A Location</label>
+                <select class="form-control mb-3" name="show-gym" id="show-gyms">
                     <option value="show-all">Show All</option>
                     <optgroup label="North">
                         <option value="woodlands" data-id="274">Woodlands</option>
@@ -68,9 +59,9 @@
                 </select>
             </div>
         </div>
-
     </div>
-
+    <a href="../compare-page/compare.html">Switch to Compare Page</a>
+    <button onclick="getLocation()">Get My Location</button>
 
     <!-- Axios cdn -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
