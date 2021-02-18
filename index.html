@@ -25,7 +25,7 @@
     <div class="wrapper">
         <div id="map">
         </div>
-        <div class = "option-bar">
+        <div class="option-bar">
             <div class="row ml-1">
                 <div class="col-6">
                     <label class="form-label title">Select A Location</label>
@@ -59,12 +59,22 @@
                         </optgroup>
                     </select>
                 </div>
+                <div class="col-2 my-auto nav-btn">
+                    <a href="../compare-page/compare.html" class="mx-auto">
+                        <img src="images/graph.png" alt="">
+                    </a>
+
+                </div>
+                <div class="col-2 my-auto mx-auto">
+                    <button onclick="getLocation()">Get My Location</button>
+                </div>
+                <div class="col-2 my-auto mx-auto">
+                    <button>Help</button>
+                </div>
             </div>
         </div>
 
     </div>
-    <a href="../compare-page/compare.html">Switch to Compare Page</a>
-    <button onclick="getLocation()">Get My Location</button>
 
     <!-- Axios cdn -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>

@@ -30,9 +30,9 @@ body{
 .option-bar{
     position: absolute;
     bottom: 0px;
-    left: 13.5%;
+    left: 5%;
     z-index: 99;
-    width: 75%;
+    width: 90%;
     background:white;
     background: linear-gradient(
         to right bottom,
@@ -44,4 +44,8 @@ body{
 
 .title{
     font-family: 'Nunito', sans-serif;
+}
+
+.nav-btn{
+    margin-left:200px;
 }
