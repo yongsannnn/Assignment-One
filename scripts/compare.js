@@ -306,11 +306,11 @@ window.addEventListener("DOMContentLoaded", async function () {
         let locationName = document.querySelector("#single-gyms").querySelector(":checked").value
         let newLive = document.querySelector("#single-gyms").querySelector(":checked").getAttribute("data-id")
         let newText = document.querySelector(".live-text");
-        newText.innerHTML = (`
+        newText.innerHTML = `
         <h2 class="title">${locationName.toUpperCase()}</h2>
         <h1>${showLiveData(newLive, dailyData)}%</h1>
         <p>Occupied</p>
-        `)
+        `
     })
 
     //Set up Bedok Live data on the webpage as default
