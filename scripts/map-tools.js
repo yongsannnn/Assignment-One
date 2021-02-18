@@ -4,6 +4,12 @@ const currentLocationIcon = L.icon({
     iconAnchor: [20, 25],
 })
 
+const gymLocationIcon = L.icon({
+    iconUrl:"../images/gym.png",
+    iconSize:[40,40],
+    iconAnchor: [20,25]
+})
+
 //Get and show current Location
 var myLocation = document.getElementById("my-location");
 

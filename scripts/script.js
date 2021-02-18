@@ -42,22 +42,34 @@ window.addEventListener("DOMContentLoaded", async function () {
             let locationId = locationToID(gymName.toLowerCase())
 
 
-            layer.bindPopup(`
+            // layer.bindPopup(`
+            // <h5>${gymName}</h5>
+            // <p> Postal Code: ${postalCode}</p>
+            // <p> Tel: ${teleNum[1]}</p>
+            // <p> Address: ${blockNum} ${streetName}</p>
+            // <p> Operating Hours: ${operatingHours}</p>
+            // <p> Live Occupancy Rate: ${showLiveData(locationId, dailyData)}</p>
+            // `);
+
+            new L.marker([feature.geometry.coordinates[1], feature.geometry.coordinates[0]], { icon: gymLocationIcon }).bindPopup(`
             <h5>${gymName}</h5>
             <p> Postal Code: ${postalCode}</p>
             <p> Tel: ${teleNum[1]}</p>
             <p> Address: ${blockNum} ${streetName}</p>
             <p> Operating Hours: ${operatingHours}</p>
             <p> Live Occupancy Rate: ${showLiveData(locationId, dailyData)}</p>
-            `);
-            //Function when click will zoom into the outlet and show bindPopup
-            layer.on("click", function (e) {
+            `).addTo(map).on("click", function (e) {
                 map.setView(e.latlng, 16)
             });
 
+            //Function when click will zoom into the outlet and show bindPopup
+            // layer.on("click", function (e) {
+            //     map.setView(e.latlng, 16)
+            // });
+
         }// end of onEachFeature
     }) // end of L.geoJson
-    layer.addTo(map);
+    // layer.addTo(map);
 
     //Getting Coordinates for each location
     getCoor(activeGym, "Bedok", bedokCoor)
