@@ -4,8 +4,20 @@ const currentLocationIcon = L.icon({
     iconAnchor: [20, 25],
 })
 
-const gymLocationIcon = L.icon({
-    iconUrl:"../images/gym.png",
+const gymHighIcon = L.icon({
+    iconUrl:"../images/gym-high.png",
+    iconSize:[40,40],
+    iconAnchor: [20,25]
+})
+
+const gymMediumIcon = L.icon({
+    iconUrl:"../images/gym-medium.png",
+    iconSize:[40,40],
+    iconAnchor: [20,25]
+})
+
+const gymLowIcon = L.icon({
+    iconUrl:"../images/gym-low.png",
     iconSize:[40,40],
     iconAnchor: [20,25]
 })
