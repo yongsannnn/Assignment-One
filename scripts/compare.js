@@ -307,7 +307,7 @@ window.addEventListener("DOMContentLoaded", async function () {
         let newLive = document.querySelector("#single-gyms").querySelector(":checked").getAttribute("data-id")
         let newText = document.querySelector(".live-text");
         newText.innerHTML = (`
-        <h2>${locationName.toUpperCase()}</h2>
+        <h2 class="title">${locationName.toUpperCase()}</h2>
         <h1>${showLiveData(newLive, dailyData)}%</h1>
         <p>Occupied</p>
         `)
@@ -319,7 +319,7 @@ window.addEventListener("DOMContentLoaded", async function () {
     let locationName = document.querySelector("#single-gyms").querySelector(":checked").value
     let newText = document.querySelector(".live-text");
     newText.innerHTML = (`
-    <h2>${locationName.toUpperCase()}</h2>
+    <h2 class="title">${locationName.toUpperCase()}</h2>
     <h1>${bedokLiveData}%</h1>
     <p>Occupied</p>
     `)
