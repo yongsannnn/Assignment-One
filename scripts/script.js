@@ -41,18 +41,9 @@ window.addEventListener("DOMContentLoaded", async function () {
             let operatingHours = gymDescription.match(/7(.*) Holiday\)/)[0];
             let locationId = locationToID(gymName.toLowerCase())
 
-
-            // layer.bindPopup(`
-            // <h5>${gymName}</h5>
-            // <p> Postal Code: ${postalCode}</p>
-            // <p> Tel: ${teleNum[1]}</p>
-            // <p> Address: ${blockNum} ${streetName}</p>
-            // <p> Operating Hours: ${operatingHours}</p>
-            // <p> Live Occupancy Rate: ${showLiveData(locationId, dailyData)}</p>
-            // `);
-            
-            if (showLiveData(locationId, dailyData) < 50){
-                new L.marker([feature.geometry.coordinates[1], feature.geometry.coordinates[0]], { icon: gymLocationIcon }).bindPopup(`
+            //Plotting data, allowing zoom on click and replace options value
+            if (showLiveData(locationId, dailyData) < 30) {
+                new L.marker([feature.geometry.coordinates[1], feature.geometry.coordinates[0]], { icon: gymLowIcon }).bindPopup(`
                 <h5>${gymName}</h5>
                 <p> Postal Code: ${postalCode}</p>
                 <p> Tel: ${teleNum[1]}</p>
@@ -60,10 +51,23 @@ window.addEventListener("DOMContentLoaded", async function () {
                 <p> Operating Hours: ${operatingHours}</p>
                 <p> Live Occupancy Rate: ${showLiveData(locationId, dailyData)}</p>
                 `).addTo(map).on("click", function (e) {
+                    document.querySelector("#show-gyms").value = updateOptions(locationId)
                     map.setView(e.latlng, 16)
                 });
+            } else if (showLiveData(locationId, dailyData) > 30 && showLiveData(locationId, dailyData) < 60){
+                new L.marker([feature.geometry.coordinates[1], feature.geometry.coordinates[0]], { icon: gymMediumIcon }).bindPopup(`
+                <h5>${gymName}</h5>
+                <p> Postal Code: ${postalCode}</p>
+                <p> Tel: ${teleNum[1]}</p>
+                <p> Address: ${blockNum} ${streetName}</p>
+                <p> Operating Hours: ${operatingHours}</p>
+                <p> Live Occupancy Rate: ${showLiveData(locationId, dailyData)}</p>
+                `).addTo(map).on("click", function (e) {
+                    document.querySelector("#show-gyms").value = updateOptions(locationId)
+                    map.setView(e.latlng, 16)
+                })
             } else {
-                new L.marker([feature.geometry.coordinates[1], feature.geometry.coordinates[0]], { icon: currentLocationIcon }).bindPopup(`
+                new L.marker([feature.geometry.coordinates[1], feature.geometry.coordinates[0]], { icon: gymHighIcon }).bindPopup(`
                 <h5>${gymName}</h5>
                 <p> Postal Code: ${postalCode}</p>
                 <p> Tel: ${teleNum[1]}</p>
@@ -71,18 +75,13 @@ window.addEventListener("DOMContentLoaded", async function () {
                 <p> Operating Hours: ${operatingHours}</p>
                 <p> Live Occupancy Rate: ${showLiveData(locationId, dailyData)}</p>
                 `).addTo(map).on("click", function (e) {
+                    document.querySelector("#show-gyms").value = updateOptions(locationId)
                     map.setView(e.latlng, 16)
-                });
+                })
             }
-
-            //Function when click will zoom into the outlet and show bindPopup
-            // layer.on("click", function (e) {
-            //     map.setView(e.latlng, 16)
-            // });
 
         }// end of onEachFeature
     }) // end of L.geoJson
-    // layer.addTo(map);
 
     //Getting Coordinates for each location
     getCoor(activeGym, "Bedok", bedokCoor)
@@ -102,26 +101,11 @@ window.addEventListener("DOMContentLoaded", async function () {
     getCoor(activeGym, "Yio Chu Kang", yioChuKangCoor)
     getCoor(activeGym, "Yishun", yishunCoor)
 
-
-
     let showBtn = document.querySelector("#show-gyms")
     showBtn.addEventListener("change", function () {
         let selectedValue = showBtn.querySelector(":checked").value
         zoomOnChange(selectedValue)
     });
-
-    // Setting up event listener to enable zoom on click of button.
-    // let bedokBtn = document.querySelector("#bedok-clicked")
-    // zoomOnClick(bedokBtn, bedokCoor)
-
-    // let bishanBtn = document.querySelector("#bishan-clicked")
-    // zoomOnClick(bishanBtn, bishanCoor)
-    // let bedokBtn = document.querySelector("#bedok-clicked").addEventListener("click", function () {
-    //     map.setView(bedokCoor, 16);
-    // })
-    // let bishanBtn = document.querySelector("#bishan-clicked").addEventListener("click", function () {
-    //     map.setView(bishanCoor, 16);
-    // })
 
 }); //End of Window Listener
 

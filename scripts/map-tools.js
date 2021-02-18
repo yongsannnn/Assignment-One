@@ -5,21 +5,21 @@ const currentLocationIcon = L.icon({
 })
 
 const gymHighIcon = L.icon({
-    iconUrl:"../images/gym-high.png",
-    iconSize:[40,40],
-    iconAnchor: [20,25]
+    iconUrl: "../images/gym-high.png",
+    iconSize: [40, 40],
+    iconAnchor: [20, 25]
 })
 
 const gymMediumIcon = L.icon({
-    iconUrl:"../images/gym-medium.png",
-    iconSize:[40,40],
-    iconAnchor: [20,25]
+    iconUrl: "../images/gym-medium.png",
+    iconSize: [40, 40],
+    iconAnchor: [20, 25]
 })
 
 const gymLowIcon = L.icon({
-    iconUrl:"../images/gym-low.png",
-    iconSize:[40,40],
-    iconAnchor: [20,25]
+    iconUrl: "../images/gym-low.png",
+    iconSize: [40, 40],
+    iconAnchor: [20, 25]
 })
 
 //Get and show current Location
@@ -38,6 +38,7 @@ function showPosition(position) {
     //     "<br>Longitude: " + position.coords.longitude;
 }
 
+//Creating a function to store zoom on change for dropdown menu
 function zoomOnChange(selectedValue) {
     if (selectedValue == "bedok") {
         map.setView(bedokCoor, 16);
@@ -87,7 +88,60 @@ function zoomOnChange(selectedValue) {
     if (selectedValue == "yishun") {
         map.setView(yishunCoor, 16);
     }
-    if (selectedValue == "show-all"){
-        map.setView(singapore,12);
+    if (selectedValue == "show-all") {
+        map.setView(singapore, 12);
     }
+}
+
+//Creating a function to store details 
+function updateOptions(locationId) {
+    if (locationId == "127") {
+        return "bedok"
+    }
+    if (locationId == "137") {
+        return "bishan"
+    }
+    if (locationId == "145") {
+        return "bukit_gombak"
+    }
+    if (locationId == "154") {
+        return "cck"
+    }
+    if (locationId == "160") {
+        return "clementi"
+    }
+    if (locationId == "185") {
+        return "hougang"
+    }
+    if (locationId == "196") {
+        return "jurong_east"
+    }
+    if (locationId == "166") {
+        return "delta"
+    }
+    if (locationId == "200") {
+        return "jurong_west"
+    }
+    if (locationId == "544") {
+        return "pasir_ris"
+    }
+    if (locationId == "239") {
+        return "sengkang"
+    }
+    if (locationId == "257") {
+        return "tampines"
+    }
+    if (locationId == "268") {
+        return "toa_payoh"
+    }
+    if (locationId == "274") {
+        return "woodlands"
+    }
+    if (locationId == "279") {
+        return "yck"
+    }
+    if (locationId == "284") {
+        return "yishun"
+    }
+
 }
