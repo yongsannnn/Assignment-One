@@ -1,6 +1,6 @@
 #map{
     height:100vh;
-    position: relative;
+    z-index: 1;
 }
 
 .btn{
@@ -15,8 +15,17 @@
     text-align: right;
 }
 
-/* .box {
-    background-color: red;
-    outline: 1px solid black;
-    height:100px;
-} */
+.selection{
+    position: absolute;
+    bottom: 0px;
+    left: 13.5%;
+    z-index: 99;
+    width: 75%;
+    background-color: grey;
+    border: 1px solid black;
+}
+
+.wrapper{
+    position: relative;
+
+}
