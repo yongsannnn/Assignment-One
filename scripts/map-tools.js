@@ -1,23 +1,23 @@
 const currentLocationIcon = L.icon({
-    iconUrl: "../images/pin-red.png",
+    iconUrl: "images/pin-red.png",
     iconSize: [40, 40],
     iconAnchor: [20, 25],
 })
 
 const gymHighIcon = L.icon({
-    iconUrl: "../images/gym-high.png",
+    iconUrl: "images/gym-high.png",
     iconSize: [40, 40],
     iconAnchor: [20, 25]
 })
 
 const gymMediumIcon = L.icon({
-    iconUrl: "../images/gym-medium.png",
+    iconUrl: "images/gym-medium.png",
     iconSize: [40, 40],
     iconAnchor: [20, 25]
 })
 
 const gymLowIcon = L.icon({
-    iconUrl: "../images/gym-low.png",
+    iconUrl: "images/gym-low.png",
     iconSize: [40, 40],
     iconAnchor: [20, 25]
 })
