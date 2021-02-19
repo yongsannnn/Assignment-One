@@ -26,7 +26,7 @@
     <div class="wrapper">
         <div id="map">
         </div>
-        <div class="box">look</div>
+        <div class="box d-none" >Popup GlassBox</div>
         <div class="option-bar">
             <div class="row p-2">
                 <div class="col-6">
@@ -73,36 +73,74 @@
                     </a>
                 </div>
                 <div class="col-2 my-auto nav-btn">
-                    <img class="glass-icon" src="images/information.png" alt="">
+                    <img class="glass-icon" src="images/information.png" data-toggle="modal"
+                        data-target="#exampleModalLong" alt="">
                 </div>
             </div>
         </div>
-
     </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content glassbox">
+                <div class="modal-header">
+                    <h5 class="modal-title title" id="exampleModalLongTitle">Project LiveFITT</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Welcome to LiveFITT, where you can find out occupancy rate of ActiveSG gym across Singapore!</p>
+                    <h5 class="title">How to use</h5>
+                    <hr>
+                    <p>1. You can select the outlet by clicking on the pins directly.</p>
+                    <p>2. Select the gym from the list provided in the dropdown menu.</p>
+                    <h5 class="title">What are the buttons for</h5>
+                    <hr>
+                    <p>Click on the <strong>graph</strong> icon to see the weekly data. Using the data provided you can see the average occupancy of
+                    each gym over one-hour periods.</p>
+                    <p>Click on the <strong>location</strong> icon to find out where is the nearest ActiveSG Gym based on your current location.</p>
+                    <h5 class="title">Legend</h5>
+                    <hr>
+                    <p>
+                        <img src="../images/gym-low.png" alt=""/> Occupancy Rate: 0 - 30%
+                    </p>
+                    <p>
+                        <img src="../images/gym-medium.png" alt=""/> Occupany Rate: 31 - 60%
+                    </p>
+                    <p>
+                        <img src="../images/gym-high.png" alt=""/> Occupany Rate: 61 - 100%
+                    </p>
+                    
 
-    <!-- Axios cdn -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
-    <!-- Apex chart cdn -->
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-    <!-- Leaflet js -->
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-        crossorigin=""></script>
-    <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster-src.js"></script>
-    <!-- Bootstrap -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/leaflet-geometryutil@0.9.3/src/leaflet.geometryutil.min.js"></script>
-    <script src="../scripts/map-tools.js"></script>
-    <script src="../scripts/global-scripts.js"></script>
-    <script src="../scripts/script.js"></script>
+
+                </div>
+            </div>
+        </div>
+        <!-- Axios cdn -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+        <!-- Apex chart cdn -->
+        <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+        <!-- Leaflet js -->
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+            integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+            crossorigin=""></script>
+        <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster-src.js"></script>
+        <!-- Bootstrap -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/leaflet-geometryutil@0.9.3/src/leaflet.geometryutil.min.js"></script>
+        <script src="../scripts/map-tools.js"></script>
+        <script src="../scripts/global-scripts.js"></script>
+        <script src="../scripts/script.js"></script>
 </body>
 
 </html>
