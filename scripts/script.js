@@ -86,7 +86,7 @@ window.addEventListener("DOMContentLoaded", async function () {
             // allCoorLayers.push(layer)
         }// end of onEachFeature
     }) // end of L.geoJson
-
+    
     //Getting Coordinates for each location
     getCoor(activeGym, "Bedok", bedokCoor)
     getCoor(activeGym, "Bishan", bishanCoor)
@@ -109,6 +109,8 @@ window.addEventListener("DOMContentLoaded", async function () {
     showBtn.addEventListener("change", function () {
         let selectedValue = showBtn.querySelector(":checked").value
         zoomOnChange(selectedValue)
+        console.log(allMarkerLayers)
+        allMarkerLayers.openPopup();
     });
 
     
