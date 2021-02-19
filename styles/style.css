@@ -5,6 +5,31 @@ body{
     font-family: 'Roboto', sans-serif;
 }
 
+.header-nav{
+    display: flex;                  
+    flex-direction: row;            
+    flex-wrap: nowrap;              
+    justify-content: space-between;
+}
+.tags-nav{
+    text-decoration: none;
+    margin: 10px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size:1rem;
+}
+
+.tags-nav:hover{
+    text-decoration:none;
+    color:#FDD7AD;
+}
+a{
+    color:white;
+}
+.active{
+    text-decoration:underline;
+}
 #map{
     height:100vh;
     z-index: 1;
@@ -52,6 +77,12 @@ body{
 
 .page-title{
     font-size: 2rem;
+}
+.nav-btn{
+    text-align: center;
+}
+.glass-icon:hover{
+    transform:scale(1.3);
 }
 @media screen and (max-width: 426px) {
     .glass-icon{
