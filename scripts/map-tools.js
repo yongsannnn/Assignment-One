@@ -21,10 +21,7 @@ const gymLowIcon = L.icon({
     iconSize: [40, 40],
     iconAnchor: [20, 25]
 })
-
 //Get and show current Location
-var myLocation = document.getElementById("my-location");
-
 function getLocation() {
     navigator.geolocation.getCurrentPosition(showPosition);
 }
@@ -33,9 +30,11 @@ function showPosition(position) {
         icon: currentLocationIcon,
     })
         .bindPopup("You are here!")
-        .addTo(map)
-    // myLocation.innerHTML = "Latitude: " + position.coords.latitude +
-    //     "<br>Longitude: " + position.coords.longitude;
+        .addTo(map);
+
+    let myCurrCoor = [position.coords.latitude, position.coords.longitude]   
+    let closestGym = L.GeometryUtil.closestLayer(map, layer, myCurrCoor);
+    console.log(closestGym)
 }
 
 //Creating a function to store zoom on change for dropdown menu

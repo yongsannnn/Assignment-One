@@ -79,7 +79,7 @@ window.addEventListener("DOMContentLoaded", async function () {
                     map.setView(e.latlng, 16)
                 })
             }
-
+                console.log(layer)
         }// end of onEachFeature
     }) // end of L.geoJson
 
@@ -107,5 +107,7 @@ window.addEventListener("DOMContentLoaded", async function () {
         zoomOnChange(selectedValue)
     });
 
+    
+    
 }); //End of Window Listener
 
