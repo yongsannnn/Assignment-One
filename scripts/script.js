@@ -46,11 +46,12 @@ window.addEventListener("DOMContentLoaded", async function () {
             if (showLiveData(locationId, dailyData) < 30) {
                 let lower = new L.marker([feature.geometry.coordinates[1], feature.geometry.coordinates[0]], { icon: gymLowIcon }).bindPopup(`
                 <h5>${gymName}</h5>
+                <hr>
+                <p class="blink"> Live Occupancy Rate: <strong>${showLiveData(locationId, dailyData)}</strong><p>
                 <p> Postal Code: ${postalCode}</p>
                 <p> Tel: ${teleNum[1]}</p>
                 <p> Address: ${blockNum} ${streetName}</p>
                 <p> Operating Hours: ${operatingHours}</p>
-                <p> Live Occupancy Rate: <strong>${showLiveData(locationId, dailyData)}<strong></p>
                 `).addTo(allMarkerLayers).on("click", function (e) {
                     document.querySelector("#show-gyms").value = updateOptions(locationId)
                     map.setView(e.latlng, 16)
@@ -59,11 +60,12 @@ window.addEventListener("DOMContentLoaded", async function () {
             } else if (showLiveData(locationId, dailyData) > 30 && showLiveData(locationId, dailyData) < 60){
                 new L.marker([feature.geometry.coordinates[1], feature.geometry.coordinates[0]], { icon: gymMediumIcon }).bindPopup(`
                 <h5>${gymName}</h5>
+                <hr>
+                <p class="blink"> Live Occupancy Rate: <strong>${showLiveData(locationId, dailyData)}</strong><p>
                 <p> Postal Code: ${postalCode}</p>
                 <p> Tel: ${teleNum[1]}</p>
                 <p> Address: ${blockNum} ${streetName}</p>
                 <p> Operating Hours: ${operatingHours}</p>
-                <p> Live Occupancy Rate: <strong>${showLiveData(locationId, dailyData)}<strong></p>
                 `).addTo(allMarkerLayers).on("click", function (e) {
                     document.querySelector("#show-gyms").value = updateOptions(locationId)
                     map.setView(e.latlng, 16)
@@ -71,11 +73,12 @@ window.addEventListener("DOMContentLoaded", async function () {
             } else {
                 new L.marker([feature.geometry.coordinates[1], feature.geometry.coordinates[0]], { icon: gymHighIcon }).bindPopup(`
                 <h5>${gymName}</h5>
+                <hr>
+                <p class="blink"> Live Occupancy Rate: <strong>${showLiveData(locationId, dailyData)}</strong><p>
                 <p> Postal Code: ${postalCode}</p>
                 <p> Tel: ${teleNum[1]}</p>
                 <p> Address: ${blockNum} ${streetName}</p>
                 <p> Operating Hours: ${operatingHours}</p>
-                <p> Live Occupancy Rate: <strong>${showLiveData(locationId, dailyData)}<strong></p>
                 `).addTo(allMarkerLayers).on("click", function (e) {
                     document.querySelector("#show-gyms").value = updateOptions(locationId)
                     map.setView(e.latlng, 16)
