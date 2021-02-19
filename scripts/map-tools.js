@@ -1,5 +1,5 @@
 const currentLocationIcon = L.icon({
-    iconUrl: "../images/pin.png",
+    iconUrl: "../images/pin-red.png",
     iconSize: [40, 40],
     iconAnchor: [20, 25],
 })
@@ -21,7 +21,10 @@ const gymLowIcon = L.icon({
     iconSize: [40, 40],
     iconAnchor: [20, 25]
 })
+
 //Get and show current Location
+let allCoorLayers = [];
+
 function getLocation() {
     navigator.geolocation.getCurrentPosition(showPosition);
 }
@@ -31,10 +34,14 @@ function showPosition(position) {
     })
         .bindPopup("You are here!")
         .addTo(map);
-
-    let myCurrCoor = [position.coords.latitude, position.coords.longitude]   
-    let closestGym = L.GeometryUtil.closestLayer(map, layer, myCurrCoor);
+    console.log(allCoorLayers)
+    let myCurrCoor = [position.coords.latitude, position.coords.longitude]
+    let closestGym = L.GeometryUtil.closestLayer(map, allCoorLayers, myCurrCoor);
     console.log(closestGym)
+    map.fitBounds([
+        [myCurrCoor[0], myCurrCoor[1]],
+        [closestGym.latlng.lat, closestGym.latlng.lng],
+    ])
 }
 
 //Creating a function to store zoom on change for dropdown menu

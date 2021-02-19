@@ -79,7 +79,7 @@ window.addEventListener("DOMContentLoaded", async function () {
                     map.setView(e.latlng, 16)
                 })
             }
-                console.log(layer)
+            allCoorLayers.push(layer)
         }// end of onEachFeature
     }) // end of L.geoJson
 
