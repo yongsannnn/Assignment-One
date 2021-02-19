@@ -49,7 +49,7 @@ window.addEventListener("DOMContentLoaded", async function () {
                 <p> Tel: ${teleNum[1]}</p>
                 <p> Address: ${blockNum} ${streetName}</p>
                 <p> Operating Hours: ${operatingHours}</p>
-                <p> Live Occupancy Rate: ${showLiveData(locationId, dailyData)}</p>
+                <p> Live Occupancy Rate: <strong>${showLiveData(locationId, dailyData)}<strong></p>
                 `).addTo(map).on("click", function (e) {
                     document.querySelector("#show-gyms").value = updateOptions(locationId)
                     map.setView(e.latlng, 16)
@@ -61,7 +61,7 @@ window.addEventListener("DOMContentLoaded", async function () {
                 <p> Tel: ${teleNum[1]}</p>
                 <p> Address: ${blockNum} ${streetName}</p>
                 <p> Operating Hours: ${operatingHours}</p>
-                <p> Live Occupancy Rate: ${showLiveData(locationId, dailyData)}</p>
+                <p> Live Occupancy Rate: <strong>${showLiveData(locationId, dailyData)}<strong></p>
                 `).addTo(map).on("click", function (e) {
                     document.querySelector("#show-gyms").value = updateOptions(locationId)
                     map.setView(e.latlng, 16)
@@ -73,7 +73,7 @@ window.addEventListener("DOMContentLoaded", async function () {
                 <p> Tel: ${teleNum[1]}</p>
                 <p> Address: ${blockNum} ${streetName}</p>
                 <p> Operating Hours: ${operatingHours}</p>
-                <p> Live Occupancy Rate: ${showLiveData(locationId, dailyData)}</p>
+                <p> Live Occupancy Rate: <strong>${showLiveData(locationId, dailyData)}<strong></p>
                 `).addTo(map).on("click", function (e) {
                     document.querySelector("#show-gyms").value = updateOptions(locationId)
                     map.setView(e.latlng, 16)
