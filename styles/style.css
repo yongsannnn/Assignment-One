@@ -46,6 +46,10 @@ body{
     font-family: 'Nunito', sans-serif;
 }
 
+.live-title{
+    font-size:1.5rem;
+}
+
 @media screen and (max-width: 426px) {
     img{
         width:95%

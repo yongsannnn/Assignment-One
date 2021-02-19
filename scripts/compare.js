@@ -307,20 +307,20 @@ window.addEventListener("DOMContentLoaded", async function () {
         let newLive = document.querySelector("#single-gyms").querySelector(":checked").getAttribute("data-id")
         let newText = document.querySelector(".live-text");
         newText.innerHTML = `
-        <h2 class="title">${locationName.toUpperCase()}</h2>
+        <h2 class="title live-title">${locationName.toUpperCase()}</h2>
         <h1>${showLiveData(newLive, dailyData)}%</h1>
         <p>Occupied</p>
         `
     })
 
-    //Set up Bedok Live data on the webpage as default
+    //Set up Woodlands Live data on the webpage as default
     //Need to counter check with option value data-id, add in function to replace this and the one inside event listener
-    let bedokLiveData = dailyData[8].percentage
+    let liveData = dailyData[5].percentage
     let locationName = document.querySelector("#single-gyms").querySelector(":checked").value
     let newText = document.querySelector(".live-text");
     newText.innerHTML = (`
-    <h2 class="title">${locationName.toUpperCase()}</h2>
-    <h1>${bedokLiveData}%</h1>
+    <h2 class="title live-title">${locationName.toUpperCase()}</h2>
+    <h1>${liveData}%</h1>
     <p>Occupied</p>
     `)
 
