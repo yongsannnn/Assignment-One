@@ -24,6 +24,7 @@ window.addEventListener("DOMContentLoaded", async function () {
     let activeGym = data.features.filter(des => des.properties.Description.includes("ClubFITT"));
     // console.log(activeGym)
     //Plotting each location into the map
+    let allMarkerLayers = new L.LayerGroup();
     let layer = L.geoJson(activeGym, {
         onEachFeature: function (feature, layer) {
             let divElement = document.createElement("div");
@@ -43,17 +44,18 @@ window.addEventListener("DOMContentLoaded", async function () {
 
             //Plotting data, allowing zoom on click and replace options value
             if (showLiveData(locationId, dailyData) < 30) {
-                new L.marker([feature.geometry.coordinates[1], feature.geometry.coordinates[0]], { icon: gymLowIcon }).bindPopup(`
+                let lower = new L.marker([feature.geometry.coordinates[1], feature.geometry.coordinates[0]], { icon: gymLowIcon }).bindPopup(`
                 <h5>${gymName}</h5>
                 <p> Postal Code: ${postalCode}</p>
                 <p> Tel: ${teleNum[1]}</p>
                 <p> Address: ${blockNum} ${streetName}</p>
                 <p> Operating Hours: ${operatingHours}</p>
                 <p> Live Occupancy Rate: <strong>${showLiveData(locationId, dailyData)}<strong></p>
-                `).addTo(map).on("click", function (e) {
+                `).addTo(allMarkerLayers).on("click", function (e) {
                     document.querySelector("#show-gyms").value = updateOptions(locationId)
                     map.setView(e.latlng, 16)
                 });
+                // console.log(allMarkerLayers)
             } else if (showLiveData(locationId, dailyData) > 30 && showLiveData(locationId, dailyData) < 60){
                 new L.marker([feature.geometry.coordinates[1], feature.geometry.coordinates[0]], { icon: gymMediumIcon }).bindPopup(`
                 <h5>${gymName}</h5>
@@ -62,7 +64,7 @@ window.addEventListener("DOMContentLoaded", async function () {
                 <p> Address: ${blockNum} ${streetName}</p>
                 <p> Operating Hours: ${operatingHours}</p>
                 <p> Live Occupancy Rate: <strong>${showLiveData(locationId, dailyData)}<strong></p>
-                `).addTo(map).on("click", function (e) {
+                `).addTo(allMarkerLayers).on("click", function (e) {
                     document.querySelector("#show-gyms").value = updateOptions(locationId)
                     map.setView(e.latlng, 16)
                 })
@@ -74,12 +76,14 @@ window.addEventListener("DOMContentLoaded", async function () {
                 <p> Address: ${blockNum} ${streetName}</p>
                 <p> Operating Hours: ${operatingHours}</p>
                 <p> Live Occupancy Rate: <strong>${showLiveData(locationId, dailyData)}<strong></p>
-                `).addTo(map).on("click", function (e) {
+                `).addTo(allMarkerLayers).on("click", function (e) {
                     document.querySelector("#show-gyms").value = updateOptions(locationId)
                     map.setView(e.latlng, 16)
                 })
             }
-            allCoorLayers.push(layer)
+            allMarkerLayers.addTo(map);
+            markerLayer= allMarkerLayers
+            // allCoorLayers.push(layer)
         }// end of onEachFeature
     }) // end of L.geoJson
 
