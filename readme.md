@@ -194,6 +194,49 @@ Nav bar is presented at the top to navigate between pages.
 
 ![Site Map](images/site-map.png)
 
+### Home Page
+---
+#### Map
+* SCI03. Name of the location
+* SCI04. Live Occupancy Rate
+* SCI05. Postal Code
+* SCI06. Telephone Number
+* SCI07. Address
+* SCI08. Opening Hours
+* SCI09. Location of the user
+
+#### Nav bar
+* SCI01. Objective of the project
+* SCI02. How to use
+* SCI10. Legend
+* CRM02. Location finder 
+* Navigation to Gym Tracker Page
 
 
+### Gym Tracker Page
+---
+#### Nav bar
+* Logo
+* Navigation to Home Page
 
+
+#### Description
+* SCI11. Description
+
+#### Dropdown menu
+* Select Gym
+* Select Time
+
+#### Live Occupancy Data
+* SCI03. Name of the location
+* SCI04. Live Occupancy Rate
+
+#### Heat Map
+* SCI12. Past weekly data
+
+### Navigation
+---
+Navigation between sites can be done by using the nav bar provided. 
+
+In Home Page, to navigate to Gym Tracker Page you have to press on the button(img) on the bottom nav bar.
+Whlist on the Gym Tracker Page, you can navigate using the top nav bar.
