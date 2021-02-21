@@ -169,16 +169,14 @@ Home Page > Gym Tracker Page
 ## Interface Design
 Each Page will adopt a different layout to fulfil the content information required.
 
-### Home Page
----
+## Home Page
 This page will focus on the map function and interaction with the map. 
 
 Nav bar is intentionally placed at the bottom of the page so that mobile users can access them easily. 
 
 ![Skeleton Design for Home Page](images/skeleton-home.png)
 
-### Gym Tracker Page
----
+## Gym Tracker Page
 This page will focus on the heatmap and filtering function. Upon interaction it will display the data in an neat and orderly manner.
 
 Nav bar is presented at the top to navigate between pages.
@@ -189,9 +187,9 @@ Nav bar is presented at the top to navigate between pages.
 
 ![Site Map](images/site-map-alt.png)
 
-### Home Page
----
-#### Map
+## Home Page
+
+### Map
 * SCI03. Name of the location
 * SCI04. Live Occupancy Rate
 * SCI05. Postal Code
@@ -200,7 +198,7 @@ Nav bar is presented at the top to navigate between pages.
 * SCI08. Opening Hours
 * SCI09. Location of the user
 
-#### Nav bar
+### Nav bar
 * SCI01. Objective of the project
 * SCI02. How to use
 * SCI10. Legend
@@ -208,29 +206,27 @@ Nav bar is presented at the top to navigate between pages.
 * Navigation to Gym Tracker Page
 
 
-### Gym Tracker Page
----
-#### Nav bar
+## Gym Tracker Page
+### Nav bar
 * Logo
 * Navigation to Home Page
 
 
-#### Description
+### Description
 * SCI11. Description
 
-#### Dropdown menu
+### Dropdown menu
 * Select Gym
 * Select Time
 
-#### Live Occupancy Data
+### Live Occupancy Data
 * SCI03. Name of the location
 * SCI04. Live Occupancy Rate
 
-#### Heat Map
+### Heat Map
 * SCI12. Past weekly data
 
-### Navigation
----
+## Navigation
 Navigation between sites can be done by using the nav bar provided. 
 
 In Home Page, to navigate to Gym Tracker Page you have to press on the button(img) on the bottom nav bar.
@@ -266,26 +262,22 @@ This makes for a more natural reading rhythm which are commonly found in humanis
 
 ## Features
 
-### Content
----
+## Content
 The webpage contains all the neccessary information the user needs. Compiled and tabulated in a simple and easy to read manner.
 
 The homepage also contains an information button that will display a quick guide and summary of the project.
 
-### Responsiveness
----
+## Responsiveness
 The webpage is responsive across various devices from desktop and laptop to phones and tablets. The component will automatically re-arrange itself based on the screen size.
 
 Reccommended view for phone and tablets is in portrait mode. 
 
-### Map overview
----
+## Map overview
 With the aid of map information can be seen at a glance without the need of inputs from the user. 
 
 Only when specific information is needed the user will require to carry out input. Eg, nearest outlet from current location.
 
-### Heat Map
----
+## Heat Map
 As the data set is heavy with numbers. Heat map makes showing this chunky dataset into simple and readable chart. 
 
 With the compliment of color selection, at a glance the user is able to infer the dataset. 
