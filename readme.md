@@ -223,7 +223,7 @@ Nav bar is presented at the top to navigate between pages.
 * SCI03. Name of the location
 * SCI04. Live Occupancy Rate
 
-### Heat Map
+### Heatmap
 * SCI12. Past weekly data
 
 ## Navigation
@@ -277,8 +277,8 @@ With the aid of map information can be seen at a glance without the need of inpu
 
 Only when specific information is needed the user will require to carry out input. Eg, nearest outlet from current location.
 
-## Heat Map
-As the data set is heavy with numbers. Heat map makes showing this chunky dataset into simple and readable chart. 
+## Heatmap
+As the data set is heavy with numbers. Heatmap makes showing this chunky dataset into simple and readable chart. 
 
 With the compliment of color selection, at a glance the user is able to infer the dataset. 
 
@@ -300,3 +300,25 @@ With the compliment of color selection, at a glance the user is able to infer th
 | | Deny access of location | No output if users deny access|
 | | Clicking on information button| Popup box containing SCI01/SCI02/SCI10 will appear
 
+## Gym Tracker Page
+|Category |Input/Actions | Output/Errors |
+|---------|-----------------------------|---------------------|
+|Overall | Mobile Responsive Check| No display error|
+|Page Function| On load | Live occupancy and Heatmap rendered based on default location in dropdown menu |
+|Dropdown Menu | Selecting different outlets| Heatmap will render weekly data and current occupancy rate will be shown|
+| | Selecting different time| Heatmap will render selected timing|
+|Heatmap| Hovering/Pressing on individual box| Show a number between 0-100|
+| | Clicking on Collapse button | Download SVG/PNG/CSV will appear|
+| | Selecting Download SVG| SVG file will be saved to local device|
+| | Selecting Download PNG| PNG file will be saved to local device|
+| | Selecting Download CSV| CSV file will be saved to local device|
+|Nav Bar| Clicking on Logo| Brings user back to Home Page|
+| | Clicking on .MAP| Brings user back to Home Page|
+| | Clicking on .TRACKER | Refreshes the Gym Tracker Page|
+
+## Validating Markup
+Two pages validated by validating service  [W3C Markup Validator](https://validator.w3.org/).
+```
+index.html - Document checking completed. No errors or warnings to show.
+tracker-html - Document checking completed. No errors or warnings to show.
+```
