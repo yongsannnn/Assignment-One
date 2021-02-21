@@ -175,20 +175,24 @@ Home Page > Gym Tracker Page
 Each Page will adopt a different layout to fulfil the content information required.
 
 ### Home Page
+---
 This page will focus on the map function and interaction with the map. 
 
 Nav bar is intentionally placed at the bottom of the page so that mobile users can access them easily. 
 
 ![Skeleton Design for Home Page](images/skeleton-home.png)
 
-### Gym Tracker Page:
+### Gym Tracker Page
+---
 This page will focus on the heatmap and filtering function. Upon interaction it will display the data in an neat and orderly manner.
 
 Nav bar is presented at the top to navigate between pages.
 
 ![Skeleton Design for Gym Tracker Page](images/skeleton-tracker.png)
 
+## Site Map
 
+![Site Map](images/site-map.png)
 
 
 
