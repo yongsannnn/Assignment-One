@@ -13,7 +13,8 @@ Site owner's goal: To showcase proficiency in the mentioned programming language
 
 ## Access
 Url to live site: https://yongsannnn.github.io/Assignment-One/index.html
-Insert Image here for point 5.18D 
+
+![Display sample on different devices upon loading](images/display-sample.PNG)
 
 
 ## Features of Website
@@ -72,7 +73,7 @@ US05. As a user, I want to know the past occupancy data, so that I can plan my f
 ```
 
 # Scope
-# Functional Requirement
+## Functional Requirement
 ```
 FR01. Intreactive map to satisfy user need.
 FR02. User can enable his location and use it and find the nearest outlet. 
@@ -83,14 +84,14 @@ FR07. Mobile responsive to decides such as Phone, Tablet and Laptop.
 FR08. Navigational bar to toggle between pages. 
 ``` 
 
-# Non-Functional Requirement
+## Non-Functional Requirement
 ```
 NFR01. Ensure readability.
 NFR02. For security purpose, location of users should not be stored.
 ```
 
-# Content Requirement
-## Mandatory Requirement
+## Content Requirement
+### Mandatory Requirement
 The list below contains the mandatory requirement for the site to meet all of the users goals (EUG01-05).
 
 ```
@@ -102,7 +103,7 @@ CRM05. Occupancy Rate Table. (Dynamic Dataset that updates with time) (EUG03) (E
 CRM06. Interactive Chart. (EUG04)
 ```
 
-## Optional Requirement
+### Optional Requirement
 The list below are optional requirements that can be implemented to enhance the site's feature. 
 
 They may not be implemented due to various reasons. (Eg, authorisation, access to system/domains)
@@ -151,26 +152,41 @@ SCI15. Buttons to represent and navigate to relavent content.
 The content structure of this page will follow a **LINEAR STRUCTURE**.
 
 Home Page > Gym Tracker Page
-Insert simple image of linear(reference to slide 86 https://docs.google.com/presentation/d/1-VqRcQfx8bfbXXgv3nU4c8Gzr5JdTRdmVdaspKHtGmM/edit#slide=id.ga0d311bd26_0_361)
 
+![Content Structure Image](images/content-structure.png)
 1. Home Page:
     * The page will only have one section that contains the map and an overlay of nav bar. 
     * Map will show the overview of the entire singapore with location of all outlets being pinned.
     * Nav bar will contain the following. 
-        a) Dropdown menu that has all the available outlets. 
-        b) A button to link to Gym Tracker Page.
-        c) A button to get the location of the user and show the nearest outlet. 
-        d) An information button that explains the site objective, usage and legend. 
+        1) Dropdown menu that has all the available outlets. 
+        2) A button to link to Gym Tracker Page.
+        3) A button to get the location of the user and show the nearest outlet. 
+        4) An information button that explains the site objective, usage and legend. 
     * The page should allow the users to interpret the occupancy without amy actions. 
 
 2. Gym Tracker Page: 
     * The page will present data via a heatmap.
-    * Filter options for users to interact with. 
+    * Using dropdown menu to include options for users to interact with. 
+    * Display Live occupany data of the selected gym.
 
 
+# Skeleton
+## Interface Design
+Each Page will adopt a different layout to fulfil the content information required.
 
+### Home Page
+This page will focus on the map function and interaction with the map. 
 
+Nav bar is intentionally placed at the bottom of the page so that mobile users can access them easily. 
 
+![Skeleton Design for Home Page](images/skeleton-home.png)
+
+### Gym Tracker Page:
+This page will focus on the heatmap and filtering function. Upon interaction it will display the data in an neat and orderly manner.
+
+Nav bar is presented at the top to navigate between pages.
+
+![Skeleton Design for Gym Tracker Page](images/skeleton-tracker.png)
 
 
 
