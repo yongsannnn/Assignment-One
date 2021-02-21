@@ -296,9 +296,10 @@ With the compliment of color selection, at a glance the user is able to infer th
 | | Selecting "Show All" from dropdown | Map will zoom back to default viewset
 | | Clicking on graph button| Navigate to Gym Tracker Page|
 | | Clicking on location button| Prompt user to allow access of location|
-| | Allow access of location| Map plots current location of user and zoom to nearest gym location|
-| | Deny access of location | No output if users deny access|
-| | Clicking on information button| Popup box containing SCI01/SCI02/SCI10 will appear
+| | Allow access of location| Map plots a new marker with the current location of user and zoom to nearest gym location|
+| | Clicking on new marker | Display a popup stating you are here|
+| | Deny access of location | No output expected when user deny access|
+| | Clicking on information button| Popup box containing SCI01/SCI02/SCI10 will appear|
 
 ## Gym Tracker Page
 |Category |Input/Actions | Output/Errors |
@@ -322,3 +323,57 @@ Two pages validated by validating service  [W3C Markup Validator](https://valida
 index.html - Document checking completed. No errors or warnings to show.
 tracker-html - Document checking completed. No errors or warnings to show.
 ```
+
+# Deployment
+Ensured all changes has been save and pushed to GitHub.
+
+LiveFITT is deployed to Github. All icons and images used in the project are stored together.
+
+Data sets are live and are called automatically. 
+
+If you would like to deploy or fork this application you can visit https://github.com/yongsannnn/livefitt. There is only one branch to this application. 
+
+# Technologies
+In this application HTML5 is used to structure the content, CSS3 for styling and Vanila JavaScript to process data.
+
+Gitpod is used as the main coding platform. 
+
+By using Bootstrap 4, mobile responsive design is made easier with the row-col system. 
+
+To demostrate proficiency, I have used CSS to create simple transform, mobile responsive codes with media query and flexbox.
+
+Several other tools that played a role in this application:
+
+For API,
+* [Axios](https://github.com/axios/axios)
+
+For map,
+* [Leaflet](https://leafletjs.com/)
+* [Leaflet Geometry.Util](https://github.com/makinacorpus/Leaflet.GeometryUtil)
+
+For styling,
+* [Bootstrap](https://getbootstrap.com/docs/4.0/getting-started/introduction/)
+
+For deployment,
+* [Github](https://github.com/)
+
+For graph,
+* [ApexCharts](https://apexcharts.com/)
+
+For icons,
+* [Flaticon](https://www.flaticon.com/)
+
+For validating markup,
+* [W3 Markup Validation Service](http://validator.w3.org/)
+
+# References
+For API References,
+* [Gym Details](https://data.gov.sg/)
+* [Live Occupancy Data](https://gym-tracker.data.gov.sg/)
+
+# Acknowledgments
+* Mr Paul Chor - For all the countless suggestions and help
+* Mr Shun - Introducing advance mapping and regex for data processing
+* Mr Ace Liang - For sharing how I should tackle data processing between different pages
+* Mr Benjamin - For your continuous assitance and brainstorming of ideas  
+* Mr Alexander Yan - For giving me the confidence that this project will bring value
