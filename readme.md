@@ -1,8 +1,7 @@
-#Interactive Web Application Project
+# Interactive Web Application Project
 
 # **LiveFITT.beta**
 ## Context
----
 This project includes writing custom HTML5, CSS3 and Vanila JavaScript code to create a webpage that serve the following purpose: 
 * Show the user where are the location of the ActiveSG Gyms(hereinafter, known as "gym") in Singapore.
 * Display the live occupancy rate and the average occupancy of each gym over one-hour periods in the past week.
@@ -13,13 +12,11 @@ User's goal: To see the location and current occupancy rate of the nearest gym b
 Site owner's goal: To showcase proficiency in the mentioned programming language.
 
 ## Access
----
 Url to live site: https://yongsannnn.github.io/Assignment-One/index.html
 Insert Image here for point 5.18D 
 
 
 ## Features of Website
----
 Talk about what? 
 Eg. Website has search engine? 
 Uses heatmap to display data?
@@ -33,11 +30,9 @@ By providing with the said info, it will help users decide when and which outlet
 
 # Strategy
 ## Identifying External Users
----
 With the primary purpose mentioned above, the website's primary users should be Fitness/Gym enthusiast across all ages. 
 
 ## Identifying External Users' Goals
----
 The users' goal here is to get the neccessary information they want to make a decision. 
 
 Therefore, the interface should be simple to understand and easy to interact with.  
@@ -51,7 +46,6 @@ EUG05. To decided which gym to visit at specific timing.
 ```
 
 ## Identifying Users Pain Point
---
 With the pax restrictions imposed to businesses due to health and safety protocol. Users find themselves with the following pain points. 
 
 ``` 
@@ -97,7 +91,6 @@ NFR02. For security purpose, location of users should not be stored.
 
 # Content Requirement
 ## Mandatory Requirement
----
 The list below contains the mandatory requirement for the site to meet all of the users goals (EUG01-05).
 
 ```
@@ -110,7 +103,6 @@ CRM06. Interactive Chart. (EUG04)
 ```
 
 ## Optional Requirement
----
 The list below are optional requirements that can be implemented to enhance the site's feature. 
 
 They may not be implemented due to various reasons. (Eg, authorisation, access to system/domains)
@@ -123,7 +115,6 @@ CRO03. Make payment using CC/ActiveSG Credits.
 
 # Structure
 ## Content Information
----
 Information that are required to fulfil the mandatory content requirement.
 
 Some information will be shared across different pages.
@@ -157,7 +148,6 @@ SCI15. Buttons to represent and navigate to relavent content.
 
 
 ## Content Structure
----
 The content structure of this page will follow a **LINEAR STRUCTURE**.
 
 Home Page > Gym Tracker Page
