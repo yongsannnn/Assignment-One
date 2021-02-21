@@ -1,86 +1,189 @@
-# Assignment-One Gym locator & Occupancy Chart Application
+#Interactive Web Application Project
 
-# Strategy:
+# **LiveFITT.beta**
+## Context
+---
+This project includes writing custom HTML5, CSS3 and Vanila JavaScript code to create a webpage that serve the following purpose: 
+* Show the user where are the location of the ActiveSG Gyms(hereinafter, known as "gym") in Singapore.
+* Display the live occupancy rate and the average occupancy of each gym over one-hour periods in the past week.
+* Allow users to read and interact with the data chart to plan out future visits.
 
-    The user: Fitness/Gym enthusiast of all ages
-    
-    The user's needs:   1) Know where is the nearby ActiveSG Gym near his premises. 
-                        2) Able to see the current occupancy rate of the selected outlet
-                        3) Read,manupilate and interact with past occupancy data chart to plan out future visits. 
-   
-    User pain points:   1) Do not want visit a gym that is fully occupied. 
-                        2) Wants to visit the gym but don't know where is the nearest outlet.
+User's goal: To see the location and current occupancy rate of the nearest gym based on their current position.
 
-    User Stories:   1) As a user I want to check where is the nearest gym, so that I can visit the gym. 
-                    2) As a user I want to know how filled the gym is now, so that I can plan my visit.
-                    3) As a user I want to compare occupancy between different gyms, so that I can choose which outlet to visit. 
+Site owner's goal: To showcase proficiency in the mentioned programming language.
 
-# Scope:
-
-    Functional Requirement:
-        1) User can search where is the nearest outlet based on region.
-        2) User can enable his location and use it and find the nearest outlet. 
-        3) User should be able to see all the key information of the selected outlet. (Eg, Opening Hours, Address, Live Occupancy Rate)
-        4) User should be able to interact with the chart to filter/compare different outlet's past & live occupancy.
-        5) Live data of the occupancy rate should be updating without the need of the user to trigger a refresh. 
-
-    Non-Functional Requirement: 
-        1) Font size should be cathered to all ages 
-        2) Application should be mobile first design. 
-        3) Application should not store any of the user's location information(if enabled)
-
-# Structure: 
-
-    Homepage: 
-        1) Map
-        2) Exisiting location plotted, segregated by different zones(North,Central,West and East)
-            When pin is selected:
-                2.1) Details of Selected Gym
-                2.2) Current Occupancy Rate
-        Sub Page:
-            1) Chart
-                1.1) Occupancy Rate for each outlet for the past 7 days. 
-                1.2) Manupilating of data
-                    1.2.1) Filter by Outlet
-                    1.2.2) Filter by Time
-                    1.2.3) Comparing one or multiple outlets
-
-# Skeleton:       
-    From left to right:
-        Image 1: Main homepage will have map and zones being shown once DOM is loaded. Filter option to allow user to hide/display zone.
-        Image 2: When user select or gets directed to a pin, information of the gym will be shown. This will include in a live occupancy rate.
-        Image 3: User clicks on "Compare" button it will switch over to interactive chart. By default, first outlet's heatmap will be displayed under "Heatmap 1", user can choose another outlet with the dropdown menu.
-                 Time filtering is optional, if no specific time is chosen. Heatmap will display full set of data. 
-        Image 4: Second Heatmap will be a compilation of different outlets for better overview and comparison. Checklist of outlets will be provided. User can filter by day or time.
-                 Conditions: At any one point, only ONE day of data can be shown alongside. (Toggle between the date checkboxes)
-                             If no outlet is selected, heatmap will show "No data"
-
-![image](images/skeleton-img-1.png) ![image](images/skeleton-img-2.png) ![image](images/skeleton-img-3.png) ![image](images/skeleton-img-4.png) 
-        
-
-# Technique/Step-by-step: 
-
-    To meet user needs 1&2) 
-        1)	Map will have 4 layers showing outlets from the north, central, west and east. Zoom to show its exact location. Use can interact and show a specific zone only.
-        2)	Pins will reflect each outlet’s occupancy rate, differentiated by 3 colours. Green, amber, red. 
-        3)	By clicking on the pin(interaction) it will show the details of the gym, address, tele, opening hours. There will be a live number of the occupancy rate that is updated by a json file every hour. This same number will affect 2nd point. 
-
-    To meet user needs 3)
-        1)	By using charts (heatmap) and json file (weekly update), user can have an overview of all the gym’s average weekly occupancy rate base on hourly intervals. 
-        2)	User can interact with the data; 
-            a.	Filter by specific outlet
-            b.	Filter by specific time or range
-        3)	Add/remove different outlets to compare occupancy through the selected parameter. (This must happen in the same chart) 
+## Access
+---
+Url to live site: https://yongsannnn.github.io/Assignment-One/index.html
+Insert Image here for point 5.18D 
 
 
-# API/JSON File Exploration and Investigations:
+## Features of Website
+---
+Talk about what? 
+Eg. Website has search engine? 
+Uses heatmap to display data?
 
-    Location of all gyms in Singapore: https://data.gov.sg/dataset/gymssg
-    Weekly Occupancy Data: https://gym-tracker.data.gov.sg/data/gym-formatted-data.json
-    Hourly Occupancy Data: https://gym-tracker.data.gov.sg/api/gymcapall/
+# Defining the Project
+The purpose of this website is to aid users in the process of deciding when to head down to the gym. 
 
-# Complexity-Matrix
-![image](images/complexity-matrix.png)
+With the current pax limit imposed to businesses, information such as occupancy rate becomes crucial. 
+
+By providing with the said info, it will help users decide when and which outlet to visit. 
+
+# Strategy
+## Identifying External Users
+---
+With the primary purpose mentioned above, the website's primary users should be Fitness/Gym enthusiast across all ages. 
+
+## Identifying External Users' Goals
+---
+The users' goal here is to get the neccessary information they want to make a decision. 
+
+Therefore, the interface should be simple to understand and easy to interact with.  
+
+```
+EUG01. See all location of the gyms.
+EUG02. Find out which gym is closest from their current location.
+EUG03. See key information of the selected outlet. Such as, opening hours, address and occupancy rate
+EUG04. Interact with the chart to filter/compare outlet past weekly data and live occupancy rate. 
+EUG05. To decided which gym to visit at specific timing.
+```
+
+## Identifying Users Pain Point
+--
+With the pax restrictions imposed to businesses due to health and safety protocol. Users find themselves with the following pain points. 
+
+``` 
+UPP01. Do not want to visit a gym that is fully occupied. 
+UPP02. Wants to visit the gym but don't know where is the nearest outlet. 
+UPP03. Wants to plan for future trip but do not know how occupied it is during various time and day. 
+``` 
+
+## Identifying Site Owner's Goals
+As a start of my journey to become a software developer. My goal as the site owner is to showcase my proficiency in HTML5/CSS3/Vanila JavaScript.
+
+```
+SOG1. Showcase my proficiency in HTML5/CSS3/Vanila JavaScript.
+SOG2. Provide a platform to solve users pain point 
+```
+
+## User stories
+```
+US01. As a user, I want to look at all the outlets, so that I know where are they located.
+US02. As a user, I want to know which outlet is closest to me, so that I avoid travelling too far. 
+US03. As a user, I want to see the details of the outlet chosen, so that I contact/travel to the gym.
+US04. As a user, I want to know how filled the gym is now, so that I know if I should visit it now.
+US05. As a user, I want to know the past occupancy data, so that I can plan my future trip. 
+```
+
+# Scope
+# Functional Requirement
+```
+FR01. Intreactive map to satisfy user need.
+FR02. User can enable his location and use it and find the nearest outlet. 
+FR03. User should be able to interact with the chart to filter/compare different outlet's past & live occupancy.
+FR05. Live data of the occupancy rate should be updating without the need of the user to trigger a refresh. 
+FR06. Use advance CSS/JavaScript to showcase proficiency.
+FR07. Mobile responsive to decides such as Phone, Tablet and Laptop.
+FR08. Navigational bar to toggle between pages. 
+``` 
+
+# Non-Functional Requirement
+```
+NFR01. Ensure readability.
+NFR02. For security purpose, location of users should not be stored.
+```
+
+# Content Requirement
+## Mandatory Requirement
+---
+The list below contains the mandatory requirement for the site to meet all of the users goals (EUG01-05).
+
+```
+CRM01. Interactive Map. (EUG01)
+CRM02. Location finder. (EUG02)
+CRM03. Distance calculator. (To calculate nearest points) (EUG02)
+CRM04. Information Table. (Static Dataset such as Address, Postal Code, Tel Number) (EUG03)
+CRM05. Occupancy Rate Table. (Dynamic Dataset that updates with time) (EUG03) (EUG04)
+CRM06. Interactive Chart. (EUG04)
+```
+
+## Optional Requirement
+---
+The list below are optional requirements that can be implemented to enhance the site's feature. 
+
+They may not be implemented due to various reasons. (Eg, authorisation, access to system/domains)
+
+```
+CRO01. Book/Reserve slots with the gym.
+CRO02. View the avaiability of various classes in each gym.
+CRO03. Make payment using CC/ActiveSG Credits. 
+``` 
+
+# Structure
+## Content Information
+---
+Information that are required to fulfil the mandatory content requirement.
+
+Some information will be shared across different pages.
+
+### Information required on the interactive map
+```
+SCI01. Objective of the project.
+SCI02. How to use.
+SCI03. Name of the location.
+SCI04. Live Occupancy Rate.
+SCI05. Postal Code.
+SCI06. Telephone Number.
+SCI07. Address.
+SCI08. Opening Hours.
+SCI09. Location of the user.
+SCI10. Legend.
+```
+
+### Information required on the chart
+```
+SCI11. Description.
+SCI12. Past weekly data.
+```
+
+### Image required
+```
+SCI13. Custom pins to denote occupancy rate.
+SCI14. Custom pin to denote current location when enabled.
+SCI15. Buttons to represent and navigate to relavent content. 
+```
+
+
+## Content Structure
+---
+The content structure of this page will follow a **LINEAR STRUCTURE**.
+
+Home Page > Gym Tracker Page
+Insert simple image of linear(reference to slide 86 https://docs.google.com/presentation/d/1-VqRcQfx8bfbXXgv3nU4c8Gzr5JdTRdmVdaspKHtGmM/edit#slide=id.ga0d311bd26_0_361)
+
+1. Home Page:
+    * The page will only have one section that contains the map and an overlay of nav bar. 
+    * Map will show the overview of the entire singapore with location of all outlets being pinned.
+    * Nav bar will contain the following. 
+        a) Dropdown menu that has all the available outlets. 
+        b) A button to link to Gym Tracker Page.
+        c) A button to get the location of the user and show the nearest outlet. 
+        d) An information button that explains the site objective, usage and legend. 
+    * The page should allow the users to interpret the occupancy without amy actions. 
+
+2. Gym Tracker Page: 
+    * The page will present data via a heatmap.
+    * Filter options for users to interact with. 
+
+
+
+
+
+
+
+
 
 
 
