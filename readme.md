@@ -281,3 +281,22 @@ Only when specific information is needed the user will require to carry out inpu
 As the data set is heavy with numbers. Heat map makes showing this chunky dataset into simple and readable chart. 
 
 With the compliment of color selection, at a glance the user is able to infer the dataset. 
+
+
+# Testing
+## Functionality Test
+## Home Page
+|Category |Input/Actions | Output/Errors |
+|---------|-----------------------------|---------------------|
+|Overall | Mobile Responsive Check| No display error|
+|Map Function| On load | Display all location with pins. Color is based on occupancy.(Red,Yellow,Green)|
+| | Clicking on location pin| Display key information SCI03 to SCI08. Dropdown menu value will update|
+| | Zooming in and out on various device| No display error|
+|Nav Bar| Selecting gym from dropdown menu| Zoom to specific gym|
+| | Selecting "Show All" from dropdown | Map will zoom back to default viewset
+| | Clicking on graph button| Navigate to Gym Tracker Page|
+| | Clicking on location button| Prompt user to allow access of location|
+| | Allow access of location| Map plots current location of user and zoom to nearest gym location|
+| | Deny access of location | No output if users deny access|
+| | Clicking on information button| Popup box containing SCI01/SCI02/SCI10 will appear
+
