@@ -12,7 +12,7 @@ User's goal: To see the location and current occupancy rate of the nearest gym b
 Site owner's goal: To showcase proficiency in the mentioned programming language.
 
 ## Access
-Url to live site: https://yongsannnn.github.io/Assignment-One/index.html
+Url to live site: https://yongsannnn.github.io/livefitt/
 
 ![Display sample on different devices upon loading](images/display-sample.PNG)
 
