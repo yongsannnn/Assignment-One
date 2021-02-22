@@ -174,6 +174,8 @@ This page will focus on the map function and interaction with the map.
 
 Nav bar is intentionally placed at the bottom of the page so that mobile users can access them easily. 
 
+The nav bar will move to the top when it is on desktop/laptop view. 
+
 ![Skeleton Design for Home Page](images/skeleton-home.png)
 
 ## Gym Tracker Page
@@ -229,9 +231,11 @@ Nav bar is presented at the top to navigate between pages.
 ## Navigation
 Navigation between sites can be done by using the nav bar provided. 
 
-In Home Page, to navigate to Gym Tracker Page you have to press on the button(img) on the bottom nav bar.
+In Home Page, the nav bar will be at the top for laptop and desktop view. For mobile and tablet view, the nav bar will be at the bottom. 
 
-Whlist on the Gym Tracker Page, you can navigate using the top nav bar.
+To navigate to Gym Tracker Page you have to press on the button represented by the graph image. 
+
+On the Gym Tracker Page, you can navigate back to the Home Page using the top nav bar.
 
 # Surface
 ## Color
