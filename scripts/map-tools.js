@@ -38,8 +38,8 @@ function showPosition(position) {
     // console.log(allCoorLayers)
     let myCurrCoor = [position.coords.latitude, position.coords.longitude]
     let closestGym = L.GeometryUtil.closestLayer(map, markerLayer.getLayers(), myCurrCoor);
-    console.log(markerLayer)
-    console.log(closestGym.layer)
+    // console.log(markerLayer)
+    // console.log(closestGym.layer)
     map.fitBounds([
         [myCurrCoor[0], myCurrCoor[1]],
         [closestGym.latlng.lat, closestGym.latlng.lng],

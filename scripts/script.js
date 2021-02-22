@@ -112,7 +112,7 @@ window.addEventListener("DOMContentLoaded", async function () {
     showBtn.addEventListener("change", function () {
         let selectedValue = showBtn.querySelector(":checked").value
         zoomOnChange(selectedValue)
-        console.log(allMarkerLayers)
+        // console.log(allMarkerLayers)
         allMarkerLayers.openPopup();
     });
 
