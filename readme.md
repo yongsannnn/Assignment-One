@@ -375,5 +375,5 @@ For API References,
 * Mr Paul Chor - For all the countless suggestions and help
 * Mr Shun - Introducing advance mapping and regex for data processing
 * Mr Ace Liang - For sharing how I should tackle data processing between different pages
-* Mr Benjamin - For your continuous assitance and brainstorming of ideas  
+* Mr Benjamin Png - For your continuous assitance and brainstorming of ideas  
 * Mr Alexander Yan - For giving me the confidence that this project will bring value

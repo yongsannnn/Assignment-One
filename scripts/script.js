@@ -47,7 +47,7 @@ window.addEventListener("DOMContentLoaded", async function () {
                 let lower = new L.marker([feature.geometry.coordinates[1], feature.geometry.coordinates[0]], { icon: gymLowIcon }).bindPopup(`
                 <h5>${gymName}</h5>
                 <hr>
-                <p class="blink"> Live Occupancy Rate: <strong>${showLiveData(locationId, dailyData)}</strong><p>
+                <p class="blink"> Live Occupancy Rate: <strong>${showLiveData(locationId, dailyData)}</strong>%<p>
                 <p> Postal Code: ${postalCode}</p>
                 <p> Tel: ${teleNum[1]}</p>
                 <p> Address: ${blockNum} ${streetName}</p>
@@ -61,7 +61,7 @@ window.addEventListener("DOMContentLoaded", async function () {
                 new L.marker([feature.geometry.coordinates[1], feature.geometry.coordinates[0]], { icon: gymMediumIcon }).bindPopup(`
                 <h5>${gymName}</h5>
                 <hr>
-                <p class="blink"> Live Occupancy Rate: <strong>${showLiveData(locationId, dailyData)}</strong><p>
+                <p class="blink"> Live Occupancy Rate: <strong>${showLiveData(locationId, dailyData)}</strong>%<p>
                 <p> Postal Code: ${postalCode}</p>
                 <p> Tel: ${teleNum[1]}</p>
                 <p> Address: ${blockNum} ${streetName}</p>
@@ -74,7 +74,7 @@ window.addEventListener("DOMContentLoaded", async function () {
                 new L.marker([feature.geometry.coordinates[1], feature.geometry.coordinates[0]], { icon: gymHighIcon }).bindPopup(`
                 <h5>${gymName}</h5>
                 <hr>
-                <p class="blink"> Live Occupancy Rate: <strong>${showLiveData(locationId, dailyData)}</strong><p>
+                <p class="blink"> Live Occupancy Rate: <strong>${showLiveData(locationId, dailyData)}</strong>%<p>
                 <p> Postal Code: ${postalCode}</p>
                 <p> Tel: ${teleNum[1]}</p>
                 <p> Address: ${blockNum} ${streetName}</p>
